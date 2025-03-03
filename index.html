@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safyr Utilis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="/" class="header__logo">
+                <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="#" class="nav__link">Home</a>
+                <span class="nav__divider">|</span>
+                <a href="#services" class="nav__link">Services</a>
+                <span class="nav__divider">|</span>
+                <a href="#why-we-are" class="nav__link">Why Mauritius</a>
+                <span class="nav__divider">|</span>
+                <a href="#" class="nav__link">Our People</a>
+                <span class="nav__divider">|</span>
+                <a href="#" class="nav__link">News & Insights</a>
+                <span class="nav__divider">|</span>
+                <a href="#contact" class="nav__link">Contact Us</a>
+            </nav>
+
+            <a href="#" class="header__search">
+                <i class="fas fa-search"></i>
+            </a>
+
+            <button class="header__mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__slider">
+            <div class="hero__logo">
+                <img src="assets/HeroLogo.png" alt="Safyr Utilis Logo" class="floating-logo">
+            </div>
+            <div class="hero__slides">
+                <!-- Slide 1 -->
+                <div class="hero__slide active">
+                    <div class="hero__content">
+                        <h1 class="animate-on-scroll">Wealth Structuring & Fund Administration</h1>
+                        <div class="hero__subheading animate-on-scroll">Looking for an offshore platform to externalise your corporate and/or individual assets to Mauritius?</div>
+                        <div class="hero__cta">
+                            <a href="#services" class="btn btn--primary">Our Services</a>
+                            <a href="#contact" class="btn btn--outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="hero__slide">
+                    <div class="hero__content">
+                        <h1 class="animate-on-scroll">Corporate & Tax Advisory Services</h1>
+                        <div class="hero__subheading animate-on-scroll">We assist you with corporate services within the existing legal framework, so you are free to focus on growing your business.</div>
+                        <div class="hero__cta">
+                            <a href="#services" class="btn btn--primary">Our Services</a>
+                            <a href="#contact" class="btn btn--outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="hero__slide">
+                    <div class="hero__content">
+                        <h1 class="animate-on-scroll">Why Choose Mauritius?</h1>
+                        <div class="hero__subheading animate-on-scroll">Located at the crossroads of Africa and Asia, Mauritius offers political stability, a favorable business environment, and attractive tax benefits.</div>
+                        <div class="hero__cta">
+                            <a href="#why-we-are" class="btn btn--primary">Learn More</a>
+                            <a href="#contact" class="btn btn--outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-btn slider-btn--prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn slider-btn--next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <div class="container">
+            <h2 class="animate-on-scroll">About Safyr Utilis</h2>
+            <p class="animate-on-scroll">Safyr Utilis is part of a financial services group based in Mauritius, combining wealth structuring and fund administration with an investment banking reach.</p>
+            <p class="animate-on-scroll">Established following the merger of Safyr Wealth Services Ltd and Utilis Corporate Services Ltd, Safyr Utilis offers specialist services in wealth structuring, including international companies and trusts, corporate services, tax, accounting and regulatory services, fund administration and business solutions such as work and residency permits.</p>
+            
+            <div class="stats-container animate-on-scroll">
+                <div class="stat-box">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-title">Professional Team</div>
+                    <p class="stat-description">Professionals with international experience and exposure to sophisticated global investors.</p>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">15</div>
+                    <div class="stat-title">Years Experience</div>
+                    <p class="stat-description">A financial services group anchored in Mauritius, with a representative office in South Africa.</p>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-number">$1B+</div>
+                    <div class="stat-title">Debt & Equity Raised</div>
+                    <p class="stat-description">Track-record of raising over $1 billion in debt and equity.</p>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="stat-title">Strong Processes</div>
+                    <p class="stat-description">Use of Standard Operating Procedures (SOP) based on an SSAE16 framework, including a custom-designed IT platform ensuring quality, consistency and timeliness of service delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="animate-on-scroll">Our Services</h2>
+            <div class="services__subtitle animate-on-scroll">
+                Expert solutions tailored to your unique needs
+            </div>
+            <div class="services__grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-card__inner">
+                        <div class="service-card__icon">
+                            <img src="assets/icons/wealth.svg" alt="Wealth Structuring">
+                        </div>
+                        <h3>Wealth Structuring</h3>
+                        <p>Ranging from wealth structuring to succession planning via our fiduciary services, Safyr Utilis accompanies you during the various stages of your investment cycle with tailored long-term solutions.</p>
+                        <a href="#" class="btn btn--read-more">Read more</a>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-card__inner">
+                        <div class="service-card__icon">
+                            <img src="assets/icons/fund.svg" alt="Fund Administration">
+                        </div>
+                        <h3>Fund Administration</h3>
+                        <p>We provide fund managers with a reputable and safe platform to launch and house their investment funds globally. Our fund services range from advisory, i.e. structuring, to back-office administration.</p>
+                        <a href="#" class="btn btn--read-more">Read more</a>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-card__inner">
+                        <div class="service-card__icon">
+                            <img src="assets/icons/corporate.svg" alt="Corporate Secretarial Services">
+                        </div>
+                        <h3>Corporate Secretarial Services</h3>
+                        <p>We assist you with the prompt delivery of corporate services within the existing legal framework, so you are free to focus on growing your business.</p>
+                        <a href="#" class="btn btn--read-more">Read more</a>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="service-card__inner">
+                        <div class="service-card__icon">
+                            <img src="assets/icons/tax.svg" alt="Tax, Accounting & Regulatory Services">
+                        </div>
+                        <h3>Tax & Accounting Services</h3>
+                        <p>We offer a full suite of tax, accounting and regulatory services, ensuring you meet compliance requirements and grow your business.</p>
+                        <a href="#" class="btn btn--read-more">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form" id="contact">
+        <div class="container">
+            <div class="contact-form__content">
+                <div class="contact-form__text animate-on-scroll">
+                    <h2>Get in <span>Touch</span></h2>
+                    <p>Have questions about our services or looking for expert advice? Our team is ready to help you navigate your financial journey with confidence.</p>
+                    <p>Fill out the form, and one of our specialists will contact you shortly to discuss how we can support your unique needs.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Ebene, Mauritius</p>
+                        <p><i class="fas fa-phone"></i> +230 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@safyrutilis.com</p>
+                    </div>
+                </div>
+                <div class="contact-form__form animate-on-scroll">
+                    <form>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" id="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="company">
+                                <label for="company">Company</label>
+                            </div>
+                            <div class="form-group full-width">
+                                <textarea id="message" rows="4" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Mauritius Section -->
+    <section class="why-mauritius" id="why-we-are">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Why Mauritius?</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="assets/images/mauritius-business.jpg" alt="Business in Mauritius">
+                                </div>
+                                <div class="slide-text">
+                                    <h3>Strategic Location</h3>
+                                    <p>Located at the crossroads of Africa and Asia, Mauritius has enjoyed social and political stability since its independence in 1968. The country is amongst the best performing in Africa across a range of indices, including business, regulatory and macroeconomic environment, and quality of living.</p>
+                                    <p>Mauritius also enjoys state-of-the-art infrastructure and communications networks, as well as a skilled professional bilingual (English and French) workforce.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="assets/images/mauritius-financial.jpg" alt="Financial Services in Mauritius">
+                                </div>
+                                <div class="slide-text">
+                                    <h3>Business Advantages</h3>
+                                    <p>Expanding offshore business and capabilities is seamless with Mauritius' wide array of double taxation avoidance agreements.</p>
+                                    <p>Create or expand your existing business on a global level with no exchange controls in a business-friendly environment.</p>
+                                    <p>Empower investors to retain earnings in Mauritius under favorable tax rates and safeguard against political and economic risks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <div class="slide-image">
+                                    <img src="assets/images/mauritius-lifestyle.jpg" alt="Lifestyle in Mauritius">
+                                </div>
+                                <div class="slide-text">
+                                    <h3>Quality of Life</h3>
+                                    <p>Mauritius offers an exceptional quality of life with its pristine beaches, year-round tropical climate, and multicultural society.</p>
+                                    <p>The island boasts world-class healthcare facilities, international schools, and a safe living environment for expatriates and their families.</p>
+                                    <p>Mauritius' residence programs offer attractive options for business professionals and retirees looking to relocate.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                    
+                    <button class="carousel-btn carousel-btn--prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-btn--next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mauritius Advantages Section -->
+    <section class="mauritius-advantages">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Key Advantages of Mauritius</h2>
+            <div class="feature-cards">
+                <div class="feature-card animate-on-scroll" data-delay="0">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Externalise Capital</h3>
+                    <p>Expanding offshore business and capabilities. Mauritius has a wide array of double taxation avoidance agreements.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll" data-delay="150">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Expand Business</h3>
+                    <p>Create or expand your existing business on a global level. No exchange controls with business friendly environment.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll" data-delay="300">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Services</h3>
+                    <p>Empower investors to retain earnings in Mauritius under favourable tax rates.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll" data-delay="450">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Family Well Being</h3>
+                    <p>Safeguard against political and economic risks with a stable jurisdiction and attractive lifestyle options.</p>
+                </div>
+            </div>
+            
+            <div class="action-row animate-on-scroll">
+                <a href="#contact" class="btn btn--primary">Contact Us to Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="animate-on-scroll">What Our Clients Say</h2>
+            <div class="testimonials__slider animate-on-scroll">
+                <div class="testimonial">
+                    <p>"Safyr Utilis has consistently delivered exceptional service. Their team's expertise in wealth structuring and fund administration has been instrumental to our success. The personalized approach and attention to detail sets them apart in the industry."</p>
+                    <div class="testimonial-author">James Richardson</div>
+                    <div class="testimonial-position">Chief Financial Officer</div>
+                    <div class="testimonial-company">
+                        <img src="assets/company-logo.png" alt="Company Logo" class="testimonial-logo">
+                    </div>
+                </div>
+                <button class="testimonial-btn testimonial-btn--prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-btn testimonial-btn--next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <img src="assets/logo.svg" alt="Safyr Utilis Logo" class="footer__logo">
+                    <p>Your trusted partner in wealth structuring, corporate services, and fund administration. Backed by a strong financial services group, we deliver expert solutions with a global reach.</p>
+                </div>
+                
+                <div class="footer__links-container">
+                    <div class="footer__links">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Corporate Secretarial Services</a></li>
+                            <li><a href="#">Fund Administration</a></li>
+                            <li><a href="#">Tax, Accounting & Regulatory Services</a></li>
+                            <li><a href="#">Wealth Structuring</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <h3>Why Mauritius?</h3>
+                        <ul>
+                            <li><a href="#">Invest in Mauritius</a></li>
+                            <li><a href="#">What to Expect When Doing Business</a></li>
+                            <li><a href="#">Relocate to Mauritius</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#services">Our Services</a></li>
+                            <li><a href="#why-we-are">Why Mauritius</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">News & Insights</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__social">
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="footer__copyright">
+                <p>&copy; 2023 Safyr Utilis. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
+
