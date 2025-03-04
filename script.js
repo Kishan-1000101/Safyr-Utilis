@@ -4,7 +4,7 @@ const mobileToggle = document.querySelector('.header__mobile-toggle');
 const nav = document.querySelector('.header__nav');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  if (window.scrollY > 100) {
     header.classList.add('header--scrolled');
   } else {
     header.classList.remove('header--scrolled');
@@ -12,8 +12,30 @@ window.addEventListener('scroll', () => {
 });
 
 // Mobile menu toggle
-mobileToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a nav link
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (nav.classList.contains('active') && 
+        !nav.contains(e.target) && 
+        !mobileToggle.contains(e.target)) {
+        mobileToggle.classList.remove('active');
+        nav.classList.remove('active');
+    }
 });
 
 // Slider functionality for hero, testimonials, and Why Mauritius sections
@@ -210,7 +232,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add active class to current slide and indicator
         carouselSlides[currentCarouselSlide].classList.add('active');
-        carouselIndicators[currentCarouselSlide].classList.add('active');
+        if (carouselIndicators[currentCarouselSlide]) {
+            carouselIndicators[currentCarouselSlide].classList.add('active');
+        }
     }
     
     // Event listeners for carousel navigation
@@ -230,29 +254,80 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Auto-advance slides every 5 seconds
+        // Auto-advance slides every 8 seconds
         setInterval(() => {
             if (document.hasFocus()) { // Only advance if the page is focused
                 showCarouselSlide(currentCarouselSlide + 1);
             }
-        }, 5000);
+        }, 8000);
     }
     
-    // Testimonials slider navigation
-    const testimonialPrev = document.querySelector('.testimonials .testimonial-btn--prev');
-    const testimonialNext = document.querySelector('.testimonials .testimonial-btn--next');
-    
-    if (testimonialPrev && testimonialNext) {
-        testimonialPrev.addEventListener('click', function() {
-            console.log('Previous testimonial');
-            // Add testimonial change logic here
-        });
+    // Testimonials slider
+    function initTestimonialsSlider() {
+        const slider = document.querySelector('.testimonials__slider');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevBtn = document.querySelector('.testimonial-btn--prev');
+        const nextBtn = document.querySelector('.testimonial-btn--next');
+        let currentIndex = 0;
+
+        function updateTestimonials() {
+            testimonials.forEach((testimonial, index) => {
+                testimonial.className = 'testimonial';
+                
+                // Calculate the relative position from current
+                const position = (index - currentIndex + testimonials.length) % testimonials.length;
+                
+                if (position === 0) {
+                    testimonial.classList.add('active');
+                } else if (position === 1 || position === (testimonials.length - 1)) {
+                    testimonial.classList.add(position === 1 ? 'next-1' : 'prev-1');
+                } else if (position === 2 || position === (testimonials.length - 2)) {
+                    testimonial.classList.add(position === 2 ? 'next-2' : 'prev-2');
+                }
+            });
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonials();
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonials();
+        }
+
+        // Initialize positions
+        updateTestimonials();
+
+        // Event listeners
+        prevBtn.addEventListener('click', prevTestimonial);
+        nextBtn.addEventListener('click', nextTestimonial);
+
+        // Auto-advance if not hovered
+        let autoAdvanceInterval;
         
-        testimonialNext.addEventListener('click', function() {
-            console.log('Next testimonial');
-            // Add testimonial change logic here
-        });
+        function startAutoAdvance() {
+            autoAdvanceInterval = setInterval(() => {
+                if (document.hasFocus()) {
+                    nextTestimonial();
+                }
+            }, 5000);
+        }
+
+        function stopAutoAdvance() {
+            clearInterval(autoAdvanceInterval);
+        }
+
+        slider.addEventListener('mouseenter', stopAutoAdvance);
+        slider.addEventListener('mouseleave', startAutoAdvance);
+
+        // Start auto-advance
+        startAutoAdvance();
     }
+
+    // Initialize all sliders when DOM is loaded
+    initTestimonialsSlider();
 });
 
 // Animation on scroll
