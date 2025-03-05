@@ -358,4 +358,60 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Trigger once on page load
     handleScroll();
+});
+
+// Testimonial Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialSlider = document.querySelector('.testimonials__slider');
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentIndex = 0;
+    const totalSlides = testimonials.length;
+
+    function updateSlideClasses() {
+        testimonials.forEach((testimonial, index) => {
+            testimonial.classList.remove('active', 'prev-2', 'prev-1', 'next-1', 'next-2');
+            
+            // Calculate the relative position from current slide
+            let position = (index - currentIndex + totalSlides) % totalSlides;
+            
+            // Assign appropriate classes based on position
+            if (position === 0) {
+                testimonial.classList.add('active');
+            } else if (position === 1) {
+                testimonial.classList.add('next-1');
+            } else if (position === 2) {
+                testimonial.classList.add('next-2');
+            } else if (position === totalSlides - 1) {
+                testimonial.classList.add('prev-1');
+            } else if (position === totalSlides - 2) {
+                testimonial.classList.add('prev-2');
+            }
+        });
+    }
+
+    function handleSlideClick(e) {
+        const clickedSlide = e.currentTarget;
+        
+        // Don't do anything if clicking the active slide
+        if (clickedSlide.classList.contains('active')) {
+            return;
+        }
+
+        // Determine if we should go forward or backward
+        if (clickedSlide.classList.contains('next-1') || clickedSlide.classList.contains('next-2')) {
+            currentIndex = (currentIndex + 1) % totalSlides;
+        } else if (clickedSlide.classList.contains('prev-1') || clickedSlide.classList.contains('prev-2')) {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        }
+
+        updateSlideClasses();
+    }
+
+    // Add click event listeners to all testimonials
+    testimonials.forEach(testimonial => {
+        testimonial.addEventListener('click', handleSlideClick);
+    });
+
+    // Initialize the carousel
+    updateSlideClasses();
 }); 
