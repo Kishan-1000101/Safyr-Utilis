@@ -414,4 +414,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the carousel
     updateSlideClasses();
+});
+
+// Footer contact cards expand/collapse
+document.addEventListener('DOMContentLoaded', function() {
+    const footerContactCards = document.querySelectorAll('.footer__contact-card');
+    
+    // Track click count and last clicked card
+    let clickCount = 0;
+    let lastClickedCard = null;
+    let clickTimer = null;
+    const doubleClickDelay = 300; // ms to wait to determine if it's a double click
+    
+    footerContactCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Prevent event from bubbling up to document
+            e.stopPropagation();
+            
+            if (lastClickedCard === this) {
+                // This is the same card that was clicked before
+                clickCount++;
+                
+                if (clickCount === 1) {
+                    // First click - wait briefly to see if there's a second click
+                    clearTimeout(clickTimer);
+                    clickTimer = setTimeout(() => {
+                        // If we get here, there was no second click within the delay
+                        // For first click, we expand the card if it's not already expanded
+                        if (!this.classList.contains('expanded')) {
+                            // Close any other expanded cards first
+                            footerContactCards.forEach(c => c.classList.remove('expanded'));
+                            // Then expand this card
+                            this.classList.add('expanded');
+                        }
+                        clickCount = 0;
+                    }, doubleClickDelay);
+                } else if (clickCount === 2) {
+                    // Second click - clear the timer and collapse the card
+                    clearTimeout(clickTimer);
+                    this.classList.remove('expanded');
+                    clickCount = 0;
+                }
+            } else {
+                // Different card was clicked
+                lastClickedCard = this;
+                clickCount = 1;
+                
+                // Wait to see if there's a second click
+                clearTimeout(clickTimer);
+                clickTimer = setTimeout(() => {
+                    // First click on a new card
+                    // Close any expanded cards first
+                    footerContactCards.forEach(c => c.classList.remove('expanded'));
+                    // Then expand this card
+                    this.classList.add('expanded');
+                    clickCount = 0;
+                }, doubleClickDelay);
+            }
+        });
+    });
+    
+    // Close expanded cards when clicking outside (but keep this as a fallback)
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.footer__contact-card')) {
+            footerContactCards.forEach(card => card.classList.remove('expanded'));
+            clickCount = 0;
+            lastClickedCard = null;
+        }
+    });
 }); 
