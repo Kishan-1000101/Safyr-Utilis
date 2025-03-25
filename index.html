@@ -17,7 +17,45 @@
             <nav class="header__nav">
                 <a href="#" class="nav__link">Who We Are</a>
                 <span class="nav__divider">|</span>
-                <a href="#services" class="nav__link">Our Services</a>
+                <div class="nav__dropdown">
+                    <a href="#services" class="nav__link">Our Services</a>
+                    <div class="nav__dropdown-content">
+                        <div class="dropdown-services">
+                            <a href="wealth-structuring.html" class="dropdown-service-item">
+                                <div class="dropdown-service-icon">
+                                    <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                </div>
+                                <div class="dropdown-service-text">
+                                    <h4>Wealth Structuring</h4>
+                                </div>
+                            </a>
+                            <a href="fund-administration.html" class="dropdown-service-item">
+                                <div class="dropdown-service-icon">
+                                    <img src="assets/icons/5.png" alt="Fund Administration">
+                                </div>
+                                <div class="dropdown-service-text">
+                                    <h4>Fund Administration</h4>
+                                </div>
+                            </a>
+                            <a href="corporate-services.html" class="dropdown-service-item">
+                                <div class="dropdown-service-icon">
+                                    <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                </div>
+                                <div class="dropdown-service-text">
+                                    <h4>Corporate Secretarial Services</h4>
+                                </div>
+                            </a>
+                            <a href="tax-accounting.html" class="dropdown-service-item">
+                                <div class="dropdown-service-icon">
+                                    <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                </div>
+                                <div class="dropdown-service-text">
+                                    <h4>Tax & Accounting Services</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <span class="nav__divider">|</span>
                 <a href="#" class="nav__link">Our Team</a>
                 <span class="nav__divider">|</span>
@@ -46,6 +84,10 @@
                 <div class="hero__slide active" style="background-image: url('assets/images/wealth-structuring.jpg');">
                     <div class="hero__content">
                         <h1 class="animate-on-scroll">Building Together</h1>
+                        <div class="hero__cta">
+                            <a href="/services.html" class="btn btn--primary">Our Services</a>
+                            <a href="/contact.html" class="btn btn--outline">Contact Us</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -53,6 +95,10 @@
                 <div class="hero__slide" style="background-image: url('assets/images/mauritius-business.jpg');">
                     <div class="hero__content">
                         <h1 class="animate-on-scroll">Newsroom</h1>
+                        <div class="hero__cta">
+                            <a href="/news.html" class="btn btn--primary">Latest News</a>
+                            <a href="/blog.html" class="btn btn--outline">Our Blog</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -60,10 +106,10 @@
                 <div class="hero__slide" style="background-image: url('assets/images/corporate-advisory.jpg');">
                     <div class="hero__content">
                         <h1 class="animate-on-scroll">Faster, Smarter, Better!</h1>
-                        <!--<div class="hero__cta">
+                        <div class="hero__cta">
                             <a href="#why-we-are" class="btn btn--primary">Learn More</a>
                             <a href="#contact" class="btn btn--outline">Contact Us</a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +126,7 @@
     <!-- Welcome Section -->
     <section class="welcome">
         <div class="container">
-            <h2 class="animate-on-scroll">Welcome to Safyr Utilis</h2>
+            <h2>Welcome to Safyr Utilis</h2>
             <p class="animate-on-scroll">Safyr Utilis is part of a financial services group based in Mauritius, combining wealth structuring and fund administration with an investment banking reach.</p>
             <p class="animate-on-scroll">Established following the merger of Safyr Wealth Services Ltd and Utilis Corporate Services Ltd, Safyr Utilis offers specialist services in wealth structuring, including international companies and trusts, corporate services, tax, accounting and regulatory services, fund administration and business solutions such as work and residency permits.</p>
         </div>
@@ -94,43 +140,43 @@
                 Expert solutions tailored to your unique needs
             </div>
             <div class="services__grid">
-                <div class="service-card animate-on-scroll">
+                <div id="wealth-structuring" class="service-card animate-on-scroll">
                     <div class="service-card__inner">
                         <div class="service-card__icon">
                             <img src="assets/icons/4.png" alt="Wealth Structuring">
                         </div>
                         <h3>Wealth Structuring</h3>
-                        <a href="#" class="btn btn--read-more">Read more</a>
+                        <a href="wealth-structuring.html" class="btn btn--read-more">Read more</a>
                     </div>
                 </div>
 
-                <div class="service-card animate-on-scroll">
+                <div id="fund-administration" class="service-card animate-on-scroll">
                     <div class="service-card__inner">
                         <div class="service-card__icon">
                             <img src="assets/icons/5.png" alt="Fund Administration">
                         </div>
                         <h3>Fund Administration</h3>
-                        <a href="#" class="btn btn--read-more">Read more</a>
+                        <a href="fund-administration.html" class="btn btn--read-more">Read more</a>
                     </div>
                 </div>
 
-                <div class="service-card animate-on-scroll">
+                <div id="corporate-services" class="service-card animate-on-scroll">
                     <div class="service-card__inner">
                         <div class="service-card__icon">
                             <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
                         </div>
                         <h3>Corporate Secretarial Services</h3>
-                        <a href="#" class="btn btn--read-more">Read more</a>
+                        <a href="corporate-services.html" class="btn btn--read-more">Read more</a>
                     </div>
                 </div>
 
-                <div class="service-card animate-on-scroll">
+                <div id="tax-accounting" class="service-card animate-on-scroll">
                     <div class="service-card__inner">
                         <div class="service-card__icon">
-                            <img src="assets/icons/7.png" alt="Tax, Accounting & Regulatory Services">
+                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
                         </div>
                         <h3>Tax & Accounting Services</h3>
-                        <a href="#" class="btn btn--read-more">Read more</a>
+                        <a href="tax-accounting.html" class="btn btn--read-more">Read more</a>
                     </div>
                 </div>
             </div>
@@ -152,25 +198,31 @@
                 <div class="reach-out__right">
                     <div class="reach-out__contact-cards">
                         <div class="reach-out__contact-card">
-                            <i class="fas fa-phone"></i>
-                            <div class="card-content">
-                                <h3>Phone</h3>
-                                <p>+230 460 3800</p>
-                            </div>
+                            <a href="tel:+2304603800" class="contact-link">
+                                <i class="fas fa-phone"></i>
+                                <div class="card-content">
+                                    <h3>Phone</h3>
+                                    <p>+230 460 3800</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="reach-out__contact-card">
-                            <i class="fas fa-envelope"></i>
-                            <div class="card-content">
-                                <h3>Email</h3>
-                                <p>info@safyrutilis.com</p>
-                            </div>
+                            <a href="mailto:info@safyrutilis.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div class="card-content">
+                                    <h3>Email</h3>
+                                    <p>info@safyrutilis.com</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="reach-out__contact-card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="card-content">
-                                <h3>Address</h3>
-                                <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
-                            </div>
+                            <a href="https://www.google.com/maps/search/Level+6,+Tower+A,+1+Cybercity+Ebene,+Mauritius" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-content">
+                                    <h3>Address</h3>
+                                    <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -311,25 +363,31 @@
 
                     <div class="footer__contact-cards">
                         <div class="footer__contact-card">
-                            <i class="fas fa-phone"></i>
-                            <div class="card-content">
-                                <h3>Phone</h3>
-                                <p>+230 460 3800</p>
-                            </div>
+                            <a href="tel:+2304603800" class="contact-link">
+                                <i class="fas fa-phone"></i>
+                                <div class="card-content">
+                                    <h3>Phone</h3>
+                                    <p>+230 460 3800</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="footer__contact-card">
-                            <i class="fas fa-envelope"></i>
-                            <div class="card-content">
-                                <h3>Email</h3>
-                                <p>info@safyrutilis.com</p>
-                            </div>
+                            <a href="mailto:info@safyrutilis.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div class="card-content">
+                                    <h3>Email</h3>
+                                    <p>info@safyrutilis.com</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="footer__contact-card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="card-content">
-                                <h3>Address</h3>
-                                <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
-                            </div>
+                            <a href="https://www.google.com/maps/search/Level+6,+Tower+A,+1+Cybercity+Ebene,+Mauritius" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-content">
+                                    <h3>Address</h3>
+                                    <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     
@@ -349,7 +407,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer__contact-form">
+                <div id="footer-contact" class="footer__contact-form">
                     <h3>Get in Touch</h3>
                     <form class="footer__form-grid">
                         <div class="footer__form-group">

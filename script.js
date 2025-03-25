@@ -26,6 +26,17 @@ if (mobileToggle) {
             nav.classList.remove('active');
         });
     });
+    
+    // Handle dropdown toggle on mobile
+    const navDropdown = document.querySelector('.nav__dropdown');
+    const servicesLink = navDropdown.querySelector('.nav__link');
+    
+    servicesLink.addEventListener('click', (e) => {
+        if (window.innerWidth <= 992) {
+            e.preventDefault();
+            navDropdown.classList.toggle('active');
+        }
+    });
 }
 
 // Close mobile menu when clicking outside
@@ -144,6 +155,40 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the target slide
         heroSlides[index].classList.add('active');
         
+        // Animate the content elements
+        const activeTitle = heroSlides[index].querySelector('h1');
+        const activeButtons = heroSlides[index].querySelector('.hero__cta');
+        
+        if (activeTitle) {
+            // Reset animation
+            activeTitle.style.opacity = '0';
+            activeTitle.style.transform = 'translateY(30px)';
+            
+            // Trigger reflow to restart animation
+            void activeTitle.offsetWidth;
+            
+            // Start animation
+            setTimeout(() => {
+                activeTitle.style.opacity = '1';
+                activeTitle.style.transform = 'translateY(0)';
+            }, 50);
+        }
+        
+        if (activeButtons) {
+            // Reset animation
+            activeButtons.style.opacity = '0';
+            activeButtons.style.transform = 'translateY(30px)';
+            
+            // Trigger reflow to restart animation
+            void activeButtons.offsetWidth;
+            
+            // Start animation with a slight delay after title
+            setTimeout(() => {
+                activeButtons.style.opacity = '1';
+                activeButtons.style.transform = 'translateY(0)';
+            }, 300);
+        }
+        
         // Update current slide
         currentHeroSlide = index;
     }
@@ -241,25 +286,53 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carouselNext && carouselPrev) {
         carouselNext.addEventListener('click', () => {
             showCarouselSlide(currentCarouselSlide + 1);
+            resetCarouselAutoSlide(); // Reset timer when manually changing slides
         });
         
         carouselPrev.addEventListener('click', () => {
             showCarouselSlide(currentCarouselSlide - 1);
+            resetCarouselAutoSlide(); // Reset timer when manually changing slides
         });
         
         // Add click events to indicators
         carouselIndicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 showCarouselSlide(index);
+                resetCarouselAutoSlide(); // Reset timer when manually changing slides
             });
         });
         
-        // Auto-advance slides every 8 seconds
-        setInterval(() => {
-            if (document.hasFocus()) { // Only advance if the page is focused
-                showCarouselSlide(currentCarouselSlide + 1);
-            }
-        }, 8000);
+        // Auto-advance slides every 5 seconds
+        let carouselInterval;
+        
+        function startCarouselAutoSlide() {
+            carouselInterval = setInterval(() => {
+                if (document.hasFocus()) { // Only advance if the page is focused
+                    showCarouselSlide(currentCarouselSlide + 1);
+                }
+            }, 5000); // Changed from 8000 to 5000 ms (5 seconds)
+        }
+        
+        function resetCarouselAutoSlide() {
+            clearInterval(carouselInterval);
+            startCarouselAutoSlide();
+        }
+        
+        // Initialize the auto-slide
+        startCarouselAutoSlide();
+        
+        // Pause auto-slide when hovering over the carousel
+        const carouselContainer = document.querySelector('.carousel-container');
+        
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
+                startCarouselAutoSlide();
+            });
+        }
     }
     
     // Testimonials slider
@@ -420,66 +493,38 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const footerContactCards = document.querySelectorAll('.footer__contact-card');
     
-    // Track click count and last clicked card
-    let clickCount = 0;
-    let lastClickedCard = null;
-    let clickTimer = null;
-    const doubleClickDelay = 300; // ms to wait to determine if it's a double click
+    // The contact links now handle the click functionality
+    // We'll keep the expand/collapse for accessibility reasons but
+    // it's no longer the primary interaction method
     
+    // This code is kept for backwards compatibility with any
+    // contact cards that don't have the contact-link class
     footerContactCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Prevent event from bubbling up to document
-            e.stopPropagation();
-            
-            if (lastClickedCard === this) {
-                // This is the same card that was clicked before
-                clickCount++;
+        const contactLink = card.querySelector('.contact-link');
+        
+        // Only attach click handler if there's no contact link
+        if (!contactLink) {
+            card.addEventListener('click', function(e) {
+                // Prevent event from bubbling up to document
+                e.stopPropagation();
                 
-                if (clickCount === 1) {
-                    // First click - wait briefly to see if there's a second click
-                    clearTimeout(clickTimer);
-                    clickTimer = setTimeout(() => {
-                        // If we get here, there was no second click within the delay
-                        // For first click, we expand the card if it's not already expanded
-                        if (!this.classList.contains('expanded')) {
-                            // Close any other expanded cards first
-                            footerContactCards.forEach(c => c.classList.remove('expanded'));
-                            // Then expand this card
-                            this.classList.add('expanded');
-                        }
-                        clickCount = 0;
-                    }, doubleClickDelay);
-                } else if (clickCount === 2) {
-                    // Second click - clear the timer and collapse the card
-                    clearTimeout(clickTimer);
+                // Toggle expanded class
+                if (this.classList.contains('expanded')) {
                     this.classList.remove('expanded');
-                    clickCount = 0;
-                }
-            } else {
-                // Different card was clicked
-                lastClickedCard = this;
-                clickCount = 1;
-                
-                // Wait to see if there's a second click
-                clearTimeout(clickTimer);
-                clickTimer = setTimeout(() => {
-                    // First click on a new card
-                    // Close any expanded cards first
+                } else {
+                    // Close any other expanded cards first
                     footerContactCards.forEach(c => c.classList.remove('expanded'));
                     // Then expand this card
                     this.classList.add('expanded');
-                    clickCount = 0;
-                }, doubleClickDelay);
-            }
-        });
+                }
+            });
+        }
     });
     
-    // Close expanded cards when clicking outside (but keep this as a fallback)
+    // Close expanded cards when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.footer__contact-card')) {
             footerContactCards.forEach(card => card.classList.remove('expanded'));
-            clickCount = 0;
-            lastClickedCard = null;
         }
     });
 }); 
