@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Safyr Utilis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .products-section {
+            padding: 60px 0;
+        }
+        
+        .product-item {
+            margin-bottom: 30px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .product-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-header h3 {
+            margin: 0;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .product-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .product-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .product-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .product-content.active {
+            padding: 20px;
+            max-height: 2000px;
+        }
+        
+        .product-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .product-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .product-content li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="who-we-are.html" class="nav__link">Who We Are</a>
+                <span class="nav__divider">|</span>
+                <div class="nav__dropdown">
+                    <a href="#services" class="nav__link">Our Expertise</a>
+                    <div class="nav__dropdown-content">
+                        <div class="dropdown-services">
+                            <div class="dropdown-service-item nested-dropdown">
+                                <div class="dropdown-service-text">
+                                    <a href="index.html#services" style="text-decoration: none; color: inherit;"><h4>Our Services</h4></a>
+                                </div>
+                                <div class="nested-dropdown-content">
+                                    <a href="wealth-structuring.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Wealth Structuring</h4>
+                                        </div>
+                                    </a>
+                                    <a href="fund-administration.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/5.png" alt="Fund Administration">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Fund Administration</h4>
+                                        </div>
+                                    </a>
+                                    <a href="corporate-services.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Corporate Secretarial Services</h4>
+                                        </div>
+                                    </a>
+                                    <a href="tax-accounting.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Tax & Accounting Services</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="products.html" class="dropdown-service-item" style="text-decoration: none;">
+                                <div class="dropdown-service-text">
+                                    <h4>Our Products</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav__divider">|</span>
+                <a href="who-we-are.html#team-section" class="nav__link">Our Team</a>
+                <span class="nav__divider">|</span>
+                <a href="#contact" class="nav__link">Contact us</a>
+                <a href="#" class="header__search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero" style="background-image: url('assets/images/wealth-structuring.jpg');">
+        <div class="service-hero__content">
+            <img src="assets/logo-white.svg" alt="Safyr Utilis" class="service-hero__logo">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> » <a href="index.html#services">Expertise</a> » <span>Our Products</span>
+            </div>
+            <h1>Our Products</h1>
+        </div>
+    </section>
+
+    <!-- Products Content -->
+    <section class="products-section">
+        <div class="container">
+            
+            <!-- GBC and AC -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Global Business Company (GBC) and Authorised Company (AC)</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>Both the Global Business Company (GBC) and the Authorised Company (AC) provide a high level of confidentiality. The choice between the two structures depends on several factors, including the nature of the proposed activities and the target markets.</p>
+                    
+                    <p>A GBC is considered tax resident in Mauritius and, subject to meeting prescribed substance requirements, may benefit from the network of Double Taxation Avoidance Agreements (DTAAs) to which Mauritius is a party. A GBC is permitted to conduct a portion of its business within the domestic market, provided that the majority of its operations are carried out outside of Mauritius.</p>
+                    
+                    <p>Conversely, an AC is generally treated as non-resident for tax purposes in Mauritius and is therefore not subject to Mauritian income tax. This structure is commonly used in situations where access to tax treaty benefits is not required. Both the GBC and AC are versatile vehicles that can be used for a wide range of activities, including investment holding (such as SPVs) and trading.</p>
+                </div>
+            </div>
+
+            <!-- Trust -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Trust</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>A trust typically involves three key parties: the settlor (or grantor), the trustees, and the beneficiaries. The settlor is the original owner of the assets and establishes the trust by formally transferring specified assets into it.</p>
+                    
+                    <p>The trustees are appointed to manage and administer the trust assets in accordance with the terms of the trust deed. They hold legal title to the assets and have a fiduciary duty to act in the best interests of the beneficiaries, both current and future.</p>
+                    
+                    <p>Trust structures offer considerable flexibility and control, allowing the settlor to define how, when, and under what conditions the trust assets are to be used or distributed for the benefit of the beneficiaries.</p>
+                </div>
+            </div>
+
+            <!-- Foundations -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Foundations</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>The ability to establish and administer Foundations in Mauritius further enhances the jurisdiction's reputation as a leading platform for wealth management, succession, and estate planning.</p>
+                    
+                    <p>A Foundation, which possesses legal personality and shares certain features with a traditional company, offers a familiar and flexible structure for individuals and families seeking to preserve and manage wealth across generations.</p>
+                    
+                    <p>A Foundation is created by a Founder who endows it with assets. Its objectives may be charitable, non-charitable, or a combination of both. These objectives can be directed towards specific individuals, a class of persons, or to achieve a defined purpose. The Founder's intentions are typically outlined in a Charter, which sets out how the assets should be administered and for what purposes or beneficiaries. While the objectives may be broadly defined, the decision-making framework must be clearly specified.</p>
+                    
+                    <p>Foundations are commonly used for asset protection, inheritance and succession planning, wealth preservation, charitable initiatives, and general asset holding.</p>
+                </div>
+            </div>
+
+            <!-- Funds -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Funds</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>In Mauritius, funds are typically structured as companies, limited partnerships, or protected cell companies, and may be established as either open-ended or closed-end funds in accordance with the Securities Act 2005.</p>
+                    
+                    <p>A fund may be self-managed or appoint a Collective Investment Scheme (CIS) Manager, subject to the approval of the Financial Services Commission (FSC). While appointing a CIS Manager is not mandatory, most funds opt to establish a CIS Manager (also referred to as an Investment Manager) in Mauritius to oversee the management of the fund. This approach can enhance the fund's tax residency status in Mauritius.</p>
+                    
+                    <p>To obtain a licence from the FSC, the promoters and key stakeholders of the Investment Manager must demonstrate a proven track record in fund management and comply with the necessary regulatory requirements.</p>
+                </div>
+            </div>
+
+            <!-- Protected Cell Company -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Protected Cell Company</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>A Protected Cell Company (PCC) is a unique corporate structure whereby a single legal entity consists of a core and multiple independent Cells, each with segregated assets and liabilities. This structure ensures that the liabilities of one Cell do not affect the assets of another, providing a strong ring-fencing mechanism.</p>
+                    
+                    <p>In Mauritius, PCCs are governed by the Protected Cell Companies Act 1999 and the Protected Cell Companies (Amendment of Schedule) Regulations 2005.</p>
+                    
+                    <p>Key Features of a PCC:</p>
+                    <ul>
+                        <li>A PCC may establish one or more individual Cells.</li>
+                        <li>The PCC is considered a single legal person, despite having multiple Cells.</li>
+                        <li>The creation of a Cell within a PCC does not constitute a separate legal entity.</li>
+                        <li>A PCC's assets are classified as either Cellular Assets (allocated to a specific Cell) or Non-Cellular (Core) Assets (held by the PCC itself).</li>
+                        <li>The PCC may issue Cell Shares, which are linked specifically to individual Cells.</li>
+                        <li>Cellular dividends may be paid in respect of Cell Shares, ensuring profits and returns are isolated to the relevant Cell.</li>
+                    </ul>
+                    
+                    <p>This structure is particularly beneficial for investment funds, insurance businesses, and structured finance vehicles where asset and liability segregation is key.</p>
+                </div>
+            </div>
+
+            <!-- Variable Capital Company -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Variable Capital Company</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>The Variable Capital Company (VCC) is a flexible corporate structure that can operate either as a standalone entity or as an umbrella vehicle housing multiple sub-funds and Special Purpose Vehicles (SPVs).</p>
+                    
+                    <p>The VCC is particularly advantageous for fund managers with diverse investment strategies, as it allows the establishment of various sub-funds—each of which may operate as either open-ended or closed-end funds—under a single legal entity.</p>
+                    
+                    <p>One of the key efficiencies of the VCC structure is the ability for the VCC, its sub-funds, and SPVs to share the same board of directors, fund manager, CIS administrator, and other service providers. This consolidated framework can significantly reduce operational and administrative costs.</p>
+                    
+                    <p>For greater independence and governance, the sub-funds and SPVs within a VCC may elect to have separate legal personality and appoint their own board of directors.</p>
+                </div>
+            </div>
+
+            <!-- Limited Partnership -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Limited Partnership</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>A Limited Partnership is a hybrid structure that combines elements of a traditional partnership with features of a private limited company. It offers the flexibility of a partnership while benefiting from a separate legal identity, making it a versatile vehicle for various investment and business purposes.</p>
+                    
+                    <p>A Limited Partnership must consist of at least one General Partner (GP) and one Limited Partner (LP):</p>
+                    
+                    <ul>
+                        <li>The General Partner is responsible for managing the business and affairs of the Limited Partnership. The GP has full authority to act on behalf of the partnership and to execute documents or bind the Limited Partnership in any way.</li>
+                        <li>The Limited Partner's role is passive, and their liability is limited to the amount of capital contributed or agreed to be contributed. LPs cannot execute documents or bind the Limited Partnership in any way.</li>
+                    </ul>
+                    
+                    <p>Key Advantages of the Limited Partnership Structure:</p>
+                    
+                    <ul>
+                        <li>Tax Transparency: Limited Partnerships are generally treated as tax-transparent, meaning the partners are taxed individually on their share of income. However, the partnership may elect to be taxed as an entity on its taxable income.</li>
+                        <li>Limited Liability: The liability of LPs is strictly limited to their capital contributions.</li>
+                        <li>Operational Efficiency: The GP handles all day-to-day management, allowing LPs to remain uninvolved in operations.</li>
+                        <li>Equal Ranking: LPs rank pari passu in respect of the return of their capital contributions.</li>
+                    </ul>
+                    
+                    <p>This structure is particularly suited for private equity, venture capital, and investment holding vehicles.</p>
+                </div>
+            </div>
+
+            <!-- Domestic -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Domestic Company</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>A Domestic Company—also referred to as a Local Company—is a company incorporated under the Mauritius Companies Act 2001 and is considered resident for tax purposes in Mauritius. As a resident entity, it may benefit from the network of Double Taxation Agreements (DTAs) to which Mauritius is a party.</p>
+                    
+                    <p>Domestic companies are subject to a flat corporate tax rate of 15% on their chargeable income. Additionally, Mauritius does not levy any withholding tax on capital gains, dividends, or impose exchange controls, enhancing its appeal as a business-friendly jurisdiction.</p>
+                    
+                    <p>A Domestic Company may be structured as either a Private or Public Company, and it can take one of the following five legal forms:</p>
+                    
+                    <p>Types of Domestic Companies:</p>
+                    
+                    <ul>
+                        <li><strong>Company Limited by Shares</strong><br>
+                        A company in which shareholders' liability is limited by its constitution to any unpaid amount on the shares held.</li>
+                        
+                        <li><strong>Company Limited by Guarantee</strong><br>
+                        A company where members' liability is limited to the amount they agree to contribute to the company's assets in the event of its winding up.</li>
+                        
+                        <li><strong>Unlimited Company</strong><br>
+                        A company where there is no limit on the liability of its shareholders.</li>
+                        
+                        <li><strong>Limited Life Company (LLC)</strong><br>
+                        A company designed to dissolve automatically upon the occurrence of certain specified events, providing operational flexibility.</li>
+                        
+                        <li><strong>Company Limited by Shares and Guarantee</strong><br>
+                        A hybrid structure where members are liable both for any unpaid amount on their shares and for a guaranteed contribution in the event of the company's winding up.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- International Business Company (IBC) – Seychelles -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>International Business Company (IBC) – Seychelles</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>An International Business Company (IBC) is a legal, tax-exempt entity incorporated under the laws of Seychelles, designed primarily for conducting international business activities.</p>
+                    
+                    <p>An IBC is prohibited from engaging in business within Seychelles, and as such, it is not subject to local taxation on its income. This makes the IBC an attractive vehicle for cross-border trade, investment holding, asset protection, and wealth management.</p>
+                </div>
+            </div>
+
+            <!-- Investment Advisor -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Investment Advisor (Restricted and Unrestricted) in Mauritius</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>In Mauritius, Investment Advisors are regulated under the Financial Services Act and are required to be licensed by the Financial Services Commission (FSC). These advisors offer professional advice to individuals, businesses, and institutions on investments in various asset classes, such as stocks, bonds, mutual funds, and real estate. Investment advisors in Mauritius can be classified into two categories:</p>
+                    
+                    <ul>
+                        <li><strong>Restricted Investment Advisors:</strong> These advisors have limited licenses, which restrict them to providing advice only on specific asset classes or to certain types of clients, such as institutional investors or high-net-worth individuals (HNWIs). Their activities are subject to tighter regulatory constraints.</li>
+                        
+                        <li><strong>Unrestricted Investment Advisors:</strong> These advisors have broader licenses that allow them to offer advice on a wide range of investment products without restrictions. They have the ability to serve a wider range of clients, including individuals, corporations, and trusts. They are also subject to regular audits and regulatory oversight by the FSC.</li>
+                    </ul>
+                    
+                    <p>Both categories are expected to meet high standards of professionalism and comply with the laws regarding investor protection, transparency, and fiduciary duties.</p>
+                </div>
+            </div>
+
+            <!-- Investment Dealers -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>Investment Dealers in Mauritius</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>In Mauritius, Investment Dealers are typically licensed under the Securities Act 2005 and the Financial Services Act, with oversight by the Financial Services Commission (FSC). Investment dealers engage in the buying, selling, and trading of financial instruments such as stocks, bonds, mutual funds, and other securities. Their roles are crucial in ensuring liquidity and efficient functioning of the securities markets.</p>
+                    
+                    <p>Investment dealers in Mauritius can operate in various capacities:</p>
+                    
+                    <ul>
+                        <li><strong>Brokerage Firms:</strong> Facilitating transactions between buyers and sellers.</li>
+                        <li><strong>Market Makers:</strong> Providing liquidity in the market by offering to buy and sell securities at specified prices.</li>
+                        <li><strong>Underwriters:</strong> Assisting companies in raising capital by issuing new shares or bonds.</li>
+                    </ul>
+                    
+                    <p>They must comply with strict regulatory requirements to ensure fair and transparent dealings and to protect investors. This includes the necessity of maintaining proper licensing, adhering to capital adequacy standards, and implementing sound risk management practices.</p>
+                </div>
+            </div>
+
+            <!-- VAITOS -->
+            <div class="product-item">
+                <div class="product-header">
+                    <h3>VAITOS (Virtual Asset and Initial Token Offering Services) in Mauritius</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="product-content">
+                    <p>VAITOS (Virtual Asset and Initial Token Offering Services) in Mauritius refers to the services associated with the issuance, management, and trading of virtual assets, such as cryptocurrencies and tokens, in compliance with the country's regulatory framework. The Financial Services Commission (FSC) regulates virtual assets in Mauritius, and the jurisdiction has created a supportive environment for businesses in the FinTech and blockchain industries, positioning itself as a hub for Initial Token Offerings (ITOs).</p>
+                    
+                    <p>Mauritius has introduced the Virtual Asset and Initial Token Offering Services Act, which provides a legal and regulatory framework for companies engaging in virtual asset activities. The Act covers:</p>
+                    
+                    <ul>
+                        <li><strong>Issuance of Tokens:</strong> Companies conducting Initial Token Offerings (ITOs) must comply with strict guidelines to ensure transparency and safeguard investor interests.</li>
+                        <li><strong>Virtual Asset Custodianship:</strong> The Act also outlines the responsibilities of virtual asset service providers, including how digital assets should be securely held and managed.</li>
+                        <li><strong>Compliance:</strong> Companies involved in VAITOS are required to register with the FSC and meet anti-money laundering (AML) and countering the financing of terrorism (CFT) requirements.</li>
+                    </ul>
+                    
+                    <p>Mauritius' clear regulatory stance in the virtual asset space ensures that businesses and investors can operate with confidence while also contributing to the growth of the blockchain ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <p>Your trusted partner in Mauritius for business solutions and corporate services.</p>
+
+                    <div class="footer__contact-cards">
+                        <div class="footer__contact-card">
+                            <a href="tel:+2304603800" class="contact-link">
+                                <i class="fas fa-phone"></i>
+                                <div class="card-content">
+                                    <h3>Phone</h3>
+                                    <p>+230 460 3800</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="mailto:info@safyrutilis.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div class="card-content">
+                                    <h3>Email</h3>
+                                    <p>info@safyrutilis.com</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="https://www.google.com/maps/search/Level+6,+Tower+A,+1+Cybercity+Ebene,+Mauritius" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-content">
+                                    <h3>Address</h3>
+                                    <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <div class="footer__links-row">
+                            <a href="#home">Home</a>
+                            <a href="#about">About Us</a>
+                            <a href="#services">Services</a>
+                            <a href="#company-formation">Company Formation</a>
+                        </div>
+                        <div class="footer__links-row">
+                            <a href="#tax-services">Tax Services</a>
+                            <a href="#blog">Blog</a>
+                            <a href="#news">News</a>
+                            <a href="#privacy">Privacy Policy</a>
+                            <a href="#terms">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-contact" class="footer__contact-form">
+                    <h3>Get in Touch</h3>
+                    <form class="footer__form-grid">
+                        <div class="footer__form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="footer__form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <textarea placeholder="Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer__copyright">
+                    © 2024 Safyr Utilis. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productHeaders = document.querySelectorAll('.product-header');
+            
+            productHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                    
+                    // Close other sections
+                    productHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            otherHeader.classList.remove('active');
+                            otherHeader.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Open the first product by default
+            if (productHeaders.length > 0) {
+                productHeaders[0].classList.add('active');
+                productHeaders[0].nextElementSibling.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html> 

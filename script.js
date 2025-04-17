@@ -19,7 +19,7 @@ if (mobileToggle) {
     });
     
     // Close mobile menu when clicking on a nav link
-    const navLinks = document.querySelectorAll('.nav__link');
+    const navLinks = document.querySelectorAll('.nav__link:not(.nav__dropdown .nav__link)');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
@@ -37,6 +37,38 @@ if (mobileToggle) {
             navDropdown.classList.toggle('active');
         }
     });
+
+    // Handle nested dropdown toggle on mobile
+    const nestedDropdown = document.querySelector('.nested-dropdown');
+    if (nestedDropdown) {
+        // Find the clickable area (text, not the link)
+        const nestedDropdownText = nestedDropdown.querySelector('.dropdown-service-text');
+        
+        nestedDropdownText.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                // If we're clicking on the link itself, don't interfere
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                
+                e.stopPropagation();
+                nestedDropdown.classList.toggle('active');
+            }
+        });
+        
+        // Make sure clicking inside the nested dropdown content doesn't close it on mobile
+        const nestedContent = nestedDropdown.querySelector('.nested-dropdown-content');
+        if (nestedContent) {
+            nestedContent.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    // If we're clicking on a link, allow it to work
+                    if (!e.target.closest('a')) {
+                        e.stopPropagation();
+                    }
+                }
+            });
+        }
+    }
 }
 
 // Close mobile menu when clicking outside
@@ -46,6 +78,15 @@ document.addEventListener('click', (e) => {
         !mobileToggle.contains(e.target)) {
         mobileToggle.classList.remove('active');
         nav.classList.remove('active');
+    }
+});
+
+// Close nested dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    const nestedDropdown = document.querySelector('.nested-dropdown');
+    if (nestedDropdown && nestedDropdown.classList.contains('active') && 
+        !nestedDropdown.contains(e.target)) {
+        nestedDropdown.classList.remove('active');
     }
 });
 

@@ -10,54 +10,66 @@
 <body>
     <header class="header">
         <div class="header__container">
-            <a href="/" class="header__logo">
+            <a href="index.html" class="header__logo">
                 <img src="assets/logo.svg" alt="Safyr Utilis Logo">
             </a>
             
             <nav class="header__nav">
-                <a href="#" class="nav__link">Who We Are</a>
+                <a href="who-we-are.html" class="nav__link">Who We Are</a>
                 <span class="nav__divider">|</span>
                 <div class="nav__dropdown">
-                    <a href="#services" class="nav__link">Our Services</a>
+                    <a href="#services" class="nav__link">Our Expertise</a>
                     <div class="nav__dropdown-content">
                         <div class="dropdown-services">
-                            <a href="wealth-structuring.html" class="dropdown-service-item">
-                                <div class="dropdown-service-icon">
-                                    <img src="assets/icons/4.png" alt="Wealth Structuring">
-                                </div>
+                            <div class="dropdown-service-item nested-dropdown">
                                 <div class="dropdown-service-text">
-                                    <h4>Wealth Structuring</h4>
+                                    <a href="#services" style="text-decoration: none; color: inherit;"><h4>Our Services</h4></a>
                                 </div>
-                            </a>
-                            <a href="fund-administration.html" class="dropdown-service-item">
-                                <div class="dropdown-service-icon">
-                                    <img src="assets/icons/5.png" alt="Fund Administration">
+                                <div class="nested-dropdown-content">
+                                    <a href="wealth-structuring.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Wealth Structuring</h4>
+                                        </div>
+                                    </a>
+                                    <a href="fund-administration.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/5.png" alt="Fund Administration">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Fund Administration</h4>
+                                        </div>
+                                    </a>
+                                    <a href="corporate-services.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Corporate Secretarial Services</h4>
+                                        </div>
+                                    </a>
+                                    <a href="tax-accounting.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Tax & Accounting Services</h4>
+                                        </div>
+                                    </a>
                                 </div>
+                            </div>
+                            <a href="products.html" class="dropdown-service-item" style="text-decoration: none;">
                                 <div class="dropdown-service-text">
-                                    <h4>Fund Administration</h4>
-                                </div>
-                            </a>
-                            <a href="corporate-services.html" class="dropdown-service-item">
-                                <div class="dropdown-service-icon">
-                                    <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
-                                </div>
-                                <div class="dropdown-service-text">
-                                    <h4>Corporate Secretarial Services</h4>
-                                </div>
-                            </a>
-                            <a href="tax-accounting.html" class="dropdown-service-item">
-                                <div class="dropdown-service-icon">
-                                    <img src="assets/icons/7.png" alt="Tax & Accounting Services">
-                                </div>
-                                <div class="dropdown-service-text">
-                                    <h4>Tax & Accounting Services</h4>
+                                    <h4>Our Products</h4>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <span class="nav__divider">|</span>
-                <a href="#" class="nav__link">Our Team</a>
+                <a href="who-we-are.html#team-section" class="nav__link">Our Team</a>
                 <span class="nav__divider">|</span>
                 <a href="#contact" class="nav__link">Contact us</a>
                 <a href="#" class="header__search">
@@ -358,7 +370,6 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__info">
-                    <img src="assets/logo.svg" alt="Logo" class="footer__logo">
                     <p>Your trusted partner in Mauritius for business solutions and corporate services.</p>
 
                     <div class="footer__contact-cards">

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - Safyr Utilis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        .mauritius-section {
+            background-color: #f7f9fc;
+            padding: 80px 0;
+        }
+        
+        .mauritius-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            margin-top: 30px;
+        }
+        
+        .mauritius-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mauritius-box h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .mauritius-box p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .team-member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-member-image img {
+            transform: scale(1.05);
+        }
+        
+        .team-member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .team-member-info h4 {
+            font-weight: normal;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .team-member-info p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .team-social a {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            color: var(--accent-color);
+        }
+        
+        .safyr-capital {
+            background-color: #f7f9fc;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+        
+        .safyr-capital-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .safyr-capital-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .safyr-capital-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .member-logos {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .member-logos h3 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .logo-item {
+            max-width: 180px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .team-member-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="who-we-are.html" class="nav__link">Who We Are</a>
+                <span class="nav__divider">|</span>
+                <div class="nav__dropdown">
+                    <a href="#services" class="nav__link">Our Expertise</a>
+                    <div class="nav__dropdown-content">
+                        <div class="dropdown-services">
+                            <div class="dropdown-service-item nested-dropdown">
+                                <div class="dropdown-service-text">
+                                    <a href="index.html#services" style="text-decoration: none; color: inherit;"><h4>Our Services</h4></a>
+                                </div>
+                                <div class="nested-dropdown-content">
+                                    <a href="wealth-structuring.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Wealth Structuring</h4>
+                                        </div>
+                                    </a>
+                                    <a href="fund-administration.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/5.png" alt="Fund Administration">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Fund Administration</h4>
+                                        </div>
+                                    </a>
+                                    <a href="corporate-services.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Corporate Secretarial Services</h4>
+                                        </div>
+                                    </a>
+                                    <a href="tax-accounting.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Tax & Accounting Services</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="products.html" class="dropdown-service-item" style="text-decoration: none;">
+                                <div class="dropdown-service-text">
+                                    <h4>Our Products</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav__divider">|</span>
+                <a href="#team-section" class="nav__link">Our Team</a>
+                <span class="nav__divider">|</span>
+                <a href="#contact" class="nav__link">Contact us</a>
+                <a href="#" class="header__search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero" style="background-image: url('assets/images/corporate-advisory.jpg');">
+        <div class="service-hero__content">
+            <img src="assets/logo-white.svg" alt="Safyr Utilis" class="service-hero__logo">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> » <span>Who We Are</span>
+            </div>
+            <h1>Who We Are</h1>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>About Safyr Utilis</h2>
+                    <p>Safyr Utilis is part of a financial services group based in Mauritius, combining wealth structuring and fund administration with an investment banking reach.</p>
+                    <p>Established following the merger of Safyr Wealth Services Ltd and Utilis Corporate Services Ltd, Safyr Utilis offers specialist services in wealth structuring, including international companies and trusts, corporate services, tax, accounting and regulatory services, fund administration and business solutions such as work, and residency permits.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/corporate-advisory.jpg" alt="Safyr Utilis Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Mauritius Section -->
+    <section class="mauritius-section">
+        <div class="container">
+            <h2 class="animate-on-scroll">Why Mauritius?</h2>
+            
+            <div class="mauritius-box">
+                <p>Located at the crossroads of Africa and Asia, Mauritius has enjoyed social and political stability ever since its independence in 1968.</p>
+                <p>The country is amongst the best-performing in Africa across a range of indices, including business, regulatory and macroeconomic environment and quality of living.</p>
+                <p>Mauritius also enjoys state-of-the-art infrastructure and communications networks, as well as a diversified banking system, and a skilled, professional and bilingual (English and French) workforce.</p>
+                <p>Mauritius is a signatory to a number of double taxation avoidance agreements and Investment Protection and Promotion Agreements, in addition to being part of African Regional Groupings such as Southern African Development Community and the Common Market for Eastern and Southern Africa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team-section" class="team-section">
+        <div class="container">
+            <h2 class="animate-on-scroll">Our Team</h2>
+            <p class="section-subtitle">Meet the professionals who make it all happen</p>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="assets/images/team/placeholder.jpg" alt="Team Member">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>John Doe</h3>
+                        <h4>CEO</h4>
+                        <p>With over 20 years of experience in international finance.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="assets/images/team/placeholder.jpg" alt="Team Member">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Jane Smith</h3>
+                        <h4>CFO</h4>
+                        <p>Expertise in financial planning and tax optimization.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="assets/images/team/placeholder.jpg" alt="Team Member">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Michael Johnson</h3>
+                        <h4>Head of Wealth Structuring</h4>
+                        <p>Specializes in international trust and estate planning.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <img src="assets/images/team/placeholder.jpg" alt="Team Member">
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Sarah Wilson</h3>
+                        <h4>Director of Fund Administration</h4>
+                        <p>Expert in fund structures and regulatory compliance.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Safyr Capital Partners Section -->
+        <div class="safyr-capital">
+            <div class="container">
+                <div class="safyr-capital-content">
+                    <h2>Safyr Capital Partners</h2>
+                    <p>We are builders and innovators striving to create a better working world. A team of dynamic professionals dedicated to forging long-term business relationships with our stakeholders.</p>
+                    <p>Safyr Capital Partners Ltd is a licensed Investment Banking institution by the Financial Services Commission (FSC), that provides Asset Management, Corporate Finance and Investment Advisory (Unrestricted) Services.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Member Logos Section -->
+        <div class="container">
+            <div class="member-logos">
+                <h3>Member of</h3>
+                <div class="logo-grid">
+                    <!-- Sample logos - replace with actual member logos -->
+                    <div class="logo-item">
+                        <img src="assets/images/partner-logo1.png" alt="Partner Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/images/partner-logo2.png" alt="Partner Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/images/partner-logo3.png" alt="Partner Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <p>Your trusted partner in Mauritius for business solutions and corporate services.</p>
+
+                    <div class="footer__contact-cards">
+                        <div class="footer__contact-card">
+                            <a href="tel:+2304603800" class="contact-link">
+                                <i class="fas fa-phone"></i>
+                                <div class="card-content">
+                                    <h3>Phone</h3>
+                                    <p>+230 460 3800</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="mailto:info@safyrutilis.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div class="card-content">
+                                    <h3>Email</h3>
+                                    <p>info@safyrutilis.com</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="https://www.google.com/maps/search/Level+6,+Tower+A,+1+Cybercity+Ebene,+Mauritius" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-content">
+                                    <h3>Address</h3>
+                                    <p>Level 6, Tower A, 1 Cybercity Ebene, Mauritius</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <div class="footer__links-row">
+                            <a href="#home">Home</a>
+                            <a href="#about">About Us</a>
+                            <a href="#services">Services</a>
+                            <a href="#company-formation">Company Formation</a>
+                        </div>
+                        <div class="footer__links-row">
+                            <a href="#tax-services">Tax Services</a>
+                            <a href="#blog">Blog</a>
+                            <a href="#news">News</a>
+                            <a href="#privacy">Privacy Policy</a>
+                            <a href="#terms">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-contact" class="footer__contact-form">
+                    <h3>Get in Touch</h3>
+                    <form class="footer__form-grid">
+                        <div class="footer__form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="footer__form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <textarea placeholder="Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer__copyright">
+                    © 2024 Safyr Utilis. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
