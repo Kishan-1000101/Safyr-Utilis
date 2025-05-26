@@ -7,119 +7,135 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .news-hero {
-            position: relative;
-            background-image: url('assets/images/corporate-advisory.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .news-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 41, 75, 0.6);
-        }
-        
-        .news-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
-        .news-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .news-hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        /* Modern Newsroom Styles - Using Original Color Scheme */
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
         }
         
         .news-section {
-            padding: 80px 0;
+            padding: 120px 0 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: #0f294b;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #f8a01b, #fbbf24);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .news-tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 50px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 60px;
         }
         
         .news-tab {
             padding: 15px 30px;
             cursor: pointer;
             font-weight: 600;
-            color: var(--primary-color);
+            color: #64748b;
             position: relative;
             transition: all 0.3s ease;
-        }
-        
-        .news-tab::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        .news-tab:hover::after,
-        .news-tab.active::after {
-            width: 100%;
+            border-radius: 50px;
+            flex: 1;
+            text-align: center;
+            border: none;
+            background: transparent;
         }
         
         .news-tab.active {
-            color: var(--accent-color);
+            background: linear-gradient(135deg, #f8a01b, #fbbf24);
+            color: white;
+            box-shadow: 0 4px 15px rgba(248, 160, 27, 0.3);
+        }
+
+        .news-tab:hover:not(.active) {
+            background: rgba(248, 160, 27, 0.1);
+            color: #f8a01b;
         }
         
         .news-content {
             max-width: 1200px;
             margin: 0 auto;
             display: none;
+            padding: 0 20px;
         }
         
         .news-content.active {
             display: block;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
         }
         
         .news-card {
-            background-color: white;
-            border-radius: 8px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-left: 4px solid #f8a01b;
+            position: relative;
         }
         
         .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(15, 41, 75, 0.15);
         }
         
         .news-image {
-            height: 200px;
+            height: 250px;
             overflow: hidden;
+            position: relative;
         }
         
         .news-image img {
@@ -130,73 +146,176 @@
         }
         
         .news-card:hover .news-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
+        }
+
+        .news-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #f8a01b, #fbbf24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .news-card-content {
-            padding: 20px;
+            padding: 30px;
         }
         
         .news-date {
             font-size: 0.9rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            display: block;
+            color: #f8a01b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .news-date i {
+            font-size: 0.8rem;
         }
         
         .news-card h3 {
-            color: var(--primary-color);
+            color: #0f294b;
             margin-bottom: 15px;
             transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.4;
         }
         
         .news-card:hover h3 {
-            color: var(--accent-color);
+            color: #f8a01b;
         }
         
         .news-card p {
-            color: var(--text-color);
-            margin-bottom: 20px;
+            color: #64748b;
+            margin-bottom: 25px;
             line-height: 1.6;
+            font-size: 1rem;
         }
         
         .news-card .btn {
-            display: inline-block;
-            margin-top: 10px;
+            background: linear-gradient(135deg, #f8a01b, #fbbf24);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .news-card .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(248, 160, 27, 0.4);
+            color: white;
+            text-decoration: none;
         }
         
         .newsletter {
-            background-color: #f7f9fc;
-            padding: 60px 0;
-            margin-top: 80px;
+            background: linear-gradient(135deg, #0f294b 0%, #1a365d 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(248, 160, 27, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
         }
         
         .newsletter-content {
-            max-width: 600px;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            padding: 0 20px;
         }
         
         .newsletter h2 {
-            color: var(--primary-color);
+            font-size: 3rem;
             margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #f8a01b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .newsletter p {
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
         
         .newsletter-form {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .newsletter-form input {
             flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 18px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #f8a01b;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-form button {
+            padding: 18px 36px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #f8a01b, #fbbf24);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(248, 160, 27, 0.4);
         }
         
         @media (max-width: 768px) {
@@ -205,15 +324,31 @@
             }
             
             .news-tabs {
-                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 4px;
+                max-width: 300px;
             }
             
             .news-tab {
-                padding: 10px 20px;
+                padding: 12px 20px;
+                margin: 2px 0;
             }
             
             .newsletter-form {
                 flex-direction: column;
+                gap: 15px;
+            }
+
+            .newsletter h2 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .news-section {
+                padding: 100px 0 80px 0;
             }
         }
     </style>
@@ -231,7 +366,7 @@
                 <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
                 <span class="nav__divider">|</span>
                 <div class="nav__dropdown">
-                    <a href="#services" class="nav__link">Our Expertise</a>
+                    <a href="products.html" class="nav__link">Our Expertise</a>
                     <div class="nav__dropdown-content">
                         <div class="dropdown-services">
                             <div class="dropdown-service-item nested-dropdown">
@@ -286,7 +421,7 @@
                 <span class="nav__divider">|</span>
                 <a href="newsroom.html" class="nav__link">Newsroom</a>
                 <span class="nav__divider">|</span>
-                <a href="#contact" class="nav__link">Contact us</a>
+                <a href="index.html#reach-out" class="nav__link">Contact us</a>
                 <a href="#" class="header__search">
                     <i class="fas fa-search"></i>
                 </a>
@@ -300,183 +435,276 @@
         </div>
     </header>
 
-    <!-- News Hero Section -->
-    <section class="news-hero">
-        <div class="news-hero-content">
+    <!-- Hero Section -->
+    <section class="service-hero" style="background-image: url('assets/images/corporate-advisory.jpg');">
+        <div class="service-hero__content">
+            <img src="assets/logo-white.svg" alt="Safyr Utilis" class="service-hero__logo">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> » <span>Newsroom</span>
+            </div>
             <h1>Newsroom</h1>
-            <p>Stay updated with the latest news, insights, and developments from Safyr Utilis</p>
         </div>
     </section>
 
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <div class="news-tabs">
-                <div class="news-tab active" data-tab="latest-news">Latest News</div>
-                <div class="news-tab" data-tab="press-releases">Press Releases</div>
-                <div class="news-tab" data-tab="blog" id="blog">Blog & Insights</div>
-                <div class="news-tab" data-tab="events">Events</div>
-            </div>
+        <!-- News Section -->
+        <div class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Latest Updates & Insights</h2>
+                    <p>Explore our comprehensive collection of news, insights, and industry updates that keep you informed about the evolving financial services landscape.</p>
+                </div>
+                
+                <div class="news-tabs">
+                    <button class="news-tab active" data-tab="latest-news">Latest News</button>
+                    <button class="news-tab" data-tab="press-releases">Press Releases</button>
+                    <button class="news-tab" data-tab="blog" id="blog">Blog & Insights</button>
+                    <button class="news-tab" data-tab="events">Events</button>
+                </div>
             
-            <!-- Latest News Tab -->
-            <div class="news-content active" id="latest-news">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news1.jpg" alt="Mauritius Business">
+                <!-- Latest News Tab -->
+                <div class="news-content active" id="latest-news">
+                    <div class="news-grid">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Breaking News</div>
+                                <img src="assets/images/news1.jpg" alt="Mauritius Business">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    June 15, 2024
+                                </div>
+                                <h3>Mauritius Reinforces Position as Premier Investment Hub for Africa</h3>
+                                <p>Safyr Utilis welcomes new regulatory changes that enhance Mauritius' standing as a preferred jurisdiction for cross-border investments into Africa.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">June 15, 2024</span>
-                            <h3>Mauritius Reinforces Position as Premier Investment Hub for Africa</h3>
-                            <p>Safyr Utilis welcomes new regulatory changes that enhance Mauritius' standing as a preferred jurisdiction for cross-border investments into Africa.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                     
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news2.jpg" alt="Finance Summit">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Events</div>
+                                <img src="assets/images/news2.jpg" alt="Finance Summit">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    May 28, 2024
+                                </div>
+                                <h3>Safyr Utilis Sponsors Annual Africa Finance Summit</h3>
+                                <p>Our team participated in the prestigious Africa Finance Summit, showcasing Mauritius as the gateway for investment into emerging African markets.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">May 28, 2024</span>
-                            <h3>Safyr Utilis Sponsors Annual Africa Finance Summit</h3>
-                            <p>Our team participated in the prestigious Africa Finance Summit, showcasing Mauritius as the gateway for investment into emerging African markets.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
+                        
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Innovation</div>
+                                <img src="assets/images/news3.jpg" alt="Digital Transformation">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    May 10, 2024
+                                </div>
+                                <h3>Digital Transformation in Financial Services: The Mauritius Advantage</h3>
+                                <p>Safyr Utilis implements cutting-edge digital solutions to enhance client experience and streamline financial services processes.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news3.jpg" alt="Digital Transformation">
-                        </div>
-                        <div class="news-card-content">
-                            <span class="news-date">May 10, 2024</span>
-                            <h3>Digital Transformation in Financial Services: The Mauritius Advantage</h3>
-                            <p>Safyr Utilis implements cutting-edge digital solutions to enhance client experience and streamline financial services processes.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Press Releases Tab -->
-            <div class="news-content" id="press-releases">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/press1.jpg" alt="Press Release">
+                <!-- Press Releases Tab -->
+                <div class="news-content" id="press-releases">
+                    <div class="news-grid">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Press Release</div>
+                                <img src="assets/images/press1.jpg" alt="Press Release">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    June 10, 2024
+                                </div>
+                                <h3>Safyr Utilis Announces Partnership with Leading African Financial Institution</h3>
+                                <p>Strategic alliance aims to facilitate cross-border investments and enhance financial services offerings across the African continent.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">June 10, 2024</span>
-                            <h3>Safyr Utilis Announces Partnership with Leading African Financial Institution</h3>
-                            <p>Strategic alliance aims to facilitate cross-border investments and enhance financial services offerings across the African continent.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                     
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/press2.jpg" alt="Press Release">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Press Release</div>
+                                <img src="assets/images/press2.jpg" alt="Press Release">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    April 22, 2024
+                                </div>
+                                <h3>Safyr Utilis Expands Service Offering with New Fiduciary Solutions</h3>
+                                <p>Enhanced suite of fiduciary services launched to meet growing demand from international clients seeking comprehensive wealth structuring solutions.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">April 22, 2024</span>
-                            <h3>Safyr Utilis Expands Service Offering with New Fiduciary Solutions</h3>
-                            <p>Enhanced suite of fiduciary services launched to meet growing demand from international clients seeking comprehensive wealth structuring solutions.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
+                        
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Press Release</div>
+                                <img src="assets/images/press3.jpg" alt="Press Release">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    March 15, 2024
+                                </div>
+                                <h3>Safyr Utilis Welcomes New Leadership to Expand Global Presence</h3>
+                                <p>Appointment of key executives signals strategic growth as Safyr Utilis strengthens its position in international financial services.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/press3.jpg" alt="Press Release">
-                        </div>
-                        <div class="news-card-content">
-                            <span class="news-date">March 15, 2024</span>
-                            <h3>Safyr Utilis Welcomes New Leadership to Expand Global Presence</h3>
-                            <p>Appointment of key executives signals strategic growth as Safyr Utilis strengthens its position in international financial services.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Blog Tab -->
-            <div class="news-content" id="blog-content">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/blog1.jpg" alt="Blog Post">
+                <!-- Blog Tab -->
+                <div class="news-content" id="blog-content">
+                    <div class="news-grid">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Insights</div>
+                                <img src="assets/images/blog1.jpg" alt="Blog Post">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    June 5, 2024
+                                </div>
+                                <h3>The Evolving Landscape of Global Tax Compliance</h3>
+                                <p>Our tax experts examine recent developments in international tax standards and their implications for businesses operating in multiple jurisdictions.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">June 5, 2024</span>
-                            <h3>The Evolving Landscape of Global Tax Compliance</h3>
-                            <p>Our tax experts examine recent developments in international tax standards and their implications for businesses operating in multiple jurisdictions.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                     
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/blog2.jpg" alt="Blog Post">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Strategy</div>
+                                <img src="assets/images/blog2.jpg" alt="Blog Post">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    May 20, 2024
+                                </div>
+                                <h3>Wealth Structuring in Uncertain Times: A Strategic Approach</h3>
+                                <p>Strategies for preserving and growing wealth in challenging economic environments through effective structuring and diversification.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">May 20, 2024</span>
-                            <h3>Wealth Structuring in Uncertain Times: A Strategic Approach</h3>
-                            <p>Strategies for preserving and growing wealth in challenging economic environments through effective structuring and diversification.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
+                        
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Compliance</div>
+                                <img src="assets/images/blog3.jpg" alt="Blog Post">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    April 15, 2024
+                                </div>
+                                <h3>Fund Administration: Navigating Regulatory Complexities</h3>
+                                <p>Insights on managing the evolving regulatory landscape for investment funds and ensuring ongoing compliance across jurisdictions.</p>
+                                <a href="#" class="btn">
+                                    Read More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/blog3.jpg" alt="Blog Post">
-                        </div>
-                        <div class="news-card-content">
-                            <span class="news-date">April 15, 2024</span>
-                            <h3>Fund Administration: Navigating Regulatory Complexities</h3>
-                            <p>Insights on managing the evolving regulatory landscape for investment funds and ensuring ongoing compliance across jurisdictions.</p>
-                            <a href="#" class="btn btn--read-more">Read More</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Events Tab -->
-            <div class="news-content" id="events">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/event1.jpg" alt="Event">
+                <!-- Events Tab -->
+                <div class="news-content" id="events">
+                    <div class="news-grid">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Upcoming</div>
+                                <img src="assets/images/event1.jpg" alt="Event">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    July 10-12, 2024
+                                </div>
+                                <h3>Mauritius International Financial Centre Forum</h3>
+                                <p>Join Safyr Utilis at this premier event showcasing Mauritius as a leading international financial center and investment gateway.</p>
+                                <a href="#" class="btn">
+                                    Learn More
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">July 10-12, 2024</span>
-                            <h3>Mauritius International Financial Centre Forum</h3>
-                            <p>Join Safyr Utilis at this premier event showcasing Mauritius as a leading international financial center and investment gateway.</p>
-                            <a href="#" class="btn btn--read-more">Learn More</a>
-                        </div>
-                    </div>
                     
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/event2.jpg" alt="Event">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Webinar</div>
+                                <img src="assets/images/event2.jpg" alt="Event">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    August 25, 2024
+                                </div>
+                                <h3>Webinar: Investment Opportunities in African Markets</h3>
+                                <p>Virtual event exploring emerging investment opportunities across African markets and the role of Mauritius in facilitating cross-border investments.</p>
+                                <a href="#" class="btn">
+                                    Register Now
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="news-card-content">
-                            <span class="news-date">August 25, 2024</span>
-                            <h3>Webinar: Investment Opportunities in African Markets</h3>
-                            <p>Virtual event exploring emerging investment opportunities across African markets and the role of Mauritius in facilitating cross-border investments.</p>
-                            <a href="#" class="btn btn--read-more">Register Now</a>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/event3.jpg" alt="Event">
-                        </div>
-                        <div class="news-card-content">
-                            <span class="news-date">September 15, 2024</span>
-                            <h3>Tax Planning for International Businesses: Workshop</h3>
-                            <p>In-person workshop on tax planning strategies for businesses operating internationally, with a focus on optimizing tax efficiency through proper structuring.</p>
-                            <a href="#" class="btn btn--read-more">Register Now</a>
+                        
+                        <div class="news-card">
+                            <div class="news-image">
+                                <div class="news-category">Workshop</div>
+                                <img src="assets/images/event3.jpg" alt="Event">
+                            </div>
+                            <div class="news-card-content">
+                                <div class="news-date">
+                                    <i class="fas fa-calendar"></i>
+                                    September 15, 2024
+                                </div>
+                                <h3>Tax Planning for International Businesses: Workshop</h3>
+                                <p>In-person workshop on tax planning strategies for businesses operating internationally, with a focus on optimizing tax efficiency through proper structuring.</p>
+                                <a href="#" class="btn">
+                                    Register Now
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
