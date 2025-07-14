@@ -103,8 +103,8 @@
         
         .living-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             margin-top: 40px;
         }
         
@@ -152,6 +152,13 @@
             margin-bottom: 15px;
         }
         
+        @media (max-width: 1200px) {
+            .living-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .mauritius-hero h1 {
                 font-size: 2.5rem;
@@ -159,6 +166,7 @@
             
             .advantage-grid, .living-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
@@ -227,7 +235,7 @@
                     </div>
                 </div>
                 <span class="nav__divider">|</span>
-                <a href="newsroom.html" class="nav__link">Newsroom</a>
+                <a href="insights.html" class="nav__link">Insights</a>
                 <span class="nav__divider">|</span>
                 <a href="index.html#reach-out" class="nav__link">Contact us</a>
                 <a href="#" class="header__search">
@@ -410,7 +418,7 @@
                             <a href="why-mauritius.html">Why Mauritius</a>
                         </div>
                         <div class="footer__links-row">
-                            <a href="newsroom.html">Newsroom</a>
+                            <a href="insights.html">Insights</a>
                             <a href="privacy-policy.html">Privacy Policy</a>
                             <a href="terms.html">Terms & Conditions</a>
                         </div>
