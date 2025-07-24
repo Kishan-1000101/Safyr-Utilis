@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Safyr Utilis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .careers-section {
+            padding: 80px 0;
+        }
+
+        .careers-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .career-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .career-card-content {
+            padding: 25px;
+        }
+
+        .career-title {
+            color: #003d4d;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .career-department {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .career-description {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .career-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .career-location {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .apply-button {
+            background-color: #003d4d;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-button:hover {
+            background-color: #005970;
+        }
+
+        .benefits-section {
+            background: #f7f9fc;
+            padding: 60px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            color: #003d4d;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            color: #003d4d;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="who-we-are.html" class="nav__link">Who We Are</a>
+                <span class="nav__divider">|</span>
+                <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
+                <span class="nav__divider">|</span>
+                <a href="careers.html" class="nav__link">Careers</a>
+                <span class="nav__divider">|</span>
+                <div class="nav__dropdown">
+                    <a href="products.html" class="nav__link">Our Expertise</a>
+                    <div class="nav__dropdown-content">
+                        <div class="dropdown-services">
+                            <div class="dropdown-service-item nested-dropdown">
+                                <div class="dropdown-service-text">
+                                    <a href="index.html#services" style="text-decoration: none; color: inherit;"><h4>Our Services</h4></a>
+                                </div>
+                                <div class="nested-dropdown-content">
+                                    <a href="wealth-structuring.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Wealth Structuring</h4>
+                                        </div>
+                                    </a>
+                                    <a href="fund-administration.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/5.png" alt="Fund Administration">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Fund Administration</h4>
+                                        </div>
+                                    </a>
+                                    <a href="corporate-services.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Corporate Secretarial Services</h4>
+                                        </div>
+                                    </a>
+                                    <a href="tax-accounting.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Tax & Accounting Services</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="products.html" class="dropdown-service-item" style="text-decoration: none;">
+                                <div class="dropdown-service-text">
+                                    <h4>Our Products</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav__divider">|</span>
+                <a href="insights.html" class="nav__link">Insights</a>
+                <span class="nav__divider">|</span>
+                <a href="index.html#reach-out" class="nav__link">Contact us</a>
+                <a href="#" class="header__search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/corporate-advisory.jpg');">
+        <div class="service-hero__content">
+            <h1>Join Our Team</h1>
+            <p>Build Your Career with Safyr Utilis</p>
+        </div>
+    </section>
+
+    <section class="careers-section">
+        <div class="container">
+            <div class="careers-intro">
+                <h2>Current Opportunities</h2>
+                <p>Join our dynamic team and be part of our growth story. We offer exciting career opportunities across various departments.</p>
+            </div>
+
+            <div class="careers-grid">
+                <div class="career-card">
+                    <div class="career-card-content">
+                        <h3 class="career-title">Senior Fund Accountant</h3>
+                        <div class="career-department">Fund Administration</div>
+                        <p class="career-description">We are seeking an experienced Fund Accountant to join our growing team...</p>
+                        <div class="career-meta">
+                            <span class="career-location">Ebene, Mauritius</span>
+                            <a href="#" class="apply-button">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more career cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="text-center">Why Join Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line benefit-icon"></i>
+                    <h3 class="benefit-title">Career Growth</h3>
+                    <p>Clear career progression paths and professional development opportunities</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users benefit-icon"></i>
+                    <h3 class="benefit-title">Great Culture</h3>
+                    <p>Collaborative work environment with a focus on team success</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-graduation-cap benefit-icon"></i>
+                    <h3 class="benefit-title">Learning & Development</h3>
+                    <p>Continuous learning opportunities and professional certifications</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-heart benefit-icon"></i>
+                    <h3 class="benefit-title">Benefits Package</h3>
+                    <p>Competitive salary and comprehensive benefits package</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <p>Your trusted partner in Mauritius for business solutions and corporate services.</p>
+
+                    <div class="footer__contact-cards">
+                        <div class="footer__contact-card">
+                            <a href="tel:+2304034250" class="contact-link">
+                                <i class="fas fa-phone"></i>
+                                <div class="card-content">
+                                    <h3>Phone</h3>
+                                    <p>(+230) 403 4250</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="mailto:info@syul.mu" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <div class="card-content">
+                                    <h3>Email</h3>
+                                    <p>info@syul.mu</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__contact-card">
+                            <a href="https://www.google.com/maps/search/7th+Floor,+Tower+1,+Nexteracom,+Cybercity,+Ebene,+72201,+Republic+of+Mauritius" target="_blank" class="contact-link">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="card-content">
+                                    <h3>Address</h3>
+                                    <p>7th Floor, Tower 1, Nexteracom, Cybercity, Ebene, 72201, Republic of Mauritius</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <div class="footer__links-row">
+                            <a href="index.html">Home</a>
+                            <a href="who-we-are.html">About Us</a>
+                            <a href="index.html#services">Services</a>
+                            <a href="why-mauritius.html">Why Mauritius</a>
+                        </div>
+                        <div class="footer__links-row">
+                            <a href="insights.html">Insights</a>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="terms.html">Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-contact" class="footer__contact-form">
+                    <h3>Get in Touch</h3>
+                    <form class="footer__form-grid">
+                        <div class="footer__form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="footer__form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="footer__form-group full-width">
+                            <textarea placeholder="Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/p/Safyr-Utilis-100075955965176/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/safyr-utilis/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="footer__copyright">
+                    © 2024 Safyr Utilis. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
