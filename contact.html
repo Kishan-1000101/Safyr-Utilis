@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Safyr Utilis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="who-we-are.html" class="nav__link">Who We Are</a>
+                <span class="nav__divider">|</span>
+                <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
+                <span class="nav__divider">|</span>
+                <div class="nav__dropdown">
+                    <a href="products.html" class="nav__link">Our Expertise</a>
+                    <div class="nav__dropdown-content">
+                        <div class="dropdown-services">
+                            <div class="dropdown-service-item nested-dropdown">
+                                <div class="dropdown-service-text">
+                                    <a href="index.html#services" style="text-decoration: none; color: inherit;"><h4>Our Services</h4></a>
+                                </div>
+                                <div class="nested-dropdown-content">
+                                    <a href="wealth-structuring.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/4.png" alt="Wealth Structuring">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Wealth Structuring</h4>
+                                        </div>
+                                    </a>
+                                    <a href="fund-administration.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/5.png" alt="Fund Administration">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Fund Administration</h4>
+                                        </div>
+                                    </a>
+                                    <a href="corporate-services.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/6.png" alt="Corporate Secretarial Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Corporate Secretarial Services</h4>
+                                        </div>
+                                    </a>
+                                    <a href="tax-accounting.html" class="dropdown-service-item">
+                                        <div class="dropdown-service-icon">
+                                            <img src="assets/icons/7.png" alt="Tax & Accounting Services">
+                                        </div>
+                                        <div class="dropdown-service-text">
+                                            <h4>Tax & Accounting Services</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="products.html" class="dropdown-service-item" style="text-decoration: none;">
+                                <div class="dropdown-service-text">
+                                    <h4>Our Products</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span class="nav__divider">|</span>
+                <a href="insights.html" class="nav__link">Insights</a>
+                <span class="nav__divider">|</span>
+                <a href="careers.html" class="nav__link">Careers</a>
+                <span class="nav__divider">|</span>
+                <a href="contact.html" class="nav__link">Contact us</a>
+                <a href="#" class="header__search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> » <span>Contact Us</span>
+        </div>
+    </section>
+    <br><br>
+    <!-- Multi-Step Contact Form Section -->
+    <section class="hawksford-form-section">
+
+        <div class="hawksford-form-grid">
+            <!-- Left Column: Content -->
+
+            <div class="hawksford-form-content">
+                <div class="red-accent-bar"></div>
+                <h2>Let us take care of your entity set up so you can focus on what matters most</h2>
+                <p>With the ever-increasing complexity around the world let Safyr Utilis' expertise nurture your business growth so you can focus on your customers.</p>
+            </div>
+            
+            <!-- Right Column: Multi-Step Form -->
+            <div class="hawksford-form-container">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="step1">
+                    <h3>Please tell us more about yourself so that one of our experts can respond to your enquiry...</h3>
+                    <form class="hawksford-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First name*</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last name*</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Company email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone number*</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+230 ********" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title*</label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country of residence*</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select country</option>
+                                    <option value="Mauritius">Mauritius</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="progress-section">
+                            <span class="progress-text">33%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33%"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="next-btn" onclick="nextStep()">Next</button>
+                    </form>
+                </div>
+
+                <!-- Step 2: Company Information -->
+                <div class="form-step" id="step2">
+                    <h3>Please provide further information in regards to your enquiry so we can provide the best support...</h3>
+                    <form class="hawksford-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Company name*</label>
+                                <input type="text" id="companyName" name="companyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry/Sector*</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select industry</option>
+                                    <option value="Financial Services">Financial Services</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Retail">Retail</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceCountry">Which country do you require the service in?*</label>
+                                <select id="serviceCountry" name="serviceCountry" required>
+                                    <option value="">Select country</option>
+                                    <option value="Mauritius">Mauritius</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Hong Kong">Hong Kong</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="enquiryDetails">Please provide further details in relation to your enquiry...*</label>
+                            <textarea id="enquiryDetails" name="enquiryDetails" rows="4" required></textarea>
+                        </div>
+                        <div class="progress-section">
+                            <span class="progress-text">66%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 66%"></div>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" class="prev-btn" onclick="prevStep()">Previous</button>
+                            <button type="button" class="next-btn" onclick="nextStep()">Next</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 3: Privacy Preferences -->
+                <div class="form-step" id="step3">
+                    <h3>From a privacy and policy perspective we now need your preferences...</h3>
+                    <p class="form-description">From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you:</p>
+                    
+                    <form class="hawksford-form">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="communications" name="communications" required>
+                            <label for="communications">I agree to receive communications from Safyr Utilis.*</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="marketing" name="marketing">
+                            <label for="marketing">I would like to receive relevant marketing communications from Safyr Utilis (including Newsletter).</label>
+                        </div>
+                        
+                        <div class="privacy-notice">
+                            <p>Safyr Utilis is committed to protecting and respecting your privacy, and we'll only use your personal information to administer your account and to provide the products and services you requested from us. You can unsubscribe at any time. For more information, please review our <a href="#" class="privacy-link">Privacy Notice</a>.</p>
+                            <p>By clicking submit below, you consent to allow safyrutilis.com to store and process the personal information submitted above to provide you the content requested.</p>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="progress-text">100%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" class="prev-btn" onclick="prevStep()">Previous</button>
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero__content">
+                <h1 class="animate-on-scroll">Get in Touch</h1>
+                <p class="animate-on-scroll">Ready to discuss your business needs? Our expert team is here to help you navigate the complexities of international business and financial services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service of Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="wealth-structuring">Wealth Structuring</option>
+                                <option value="fund-administration">Fund Administration</option>
+                                <option value="corporate-services">Corporate Secretarial Services</option>
+                                <option value="tax-accounting">Tax & Accounting Services</option>
+                                <option value="general-inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us about your business needs and how we can help..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">I agree to the <a href="#" target="_blank">Privacy Policy</a> and consent to being contacted regarding my inquiry.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Get in touch with our team through any of the following channels:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Address</h4>
+                                <p>Level 3, Alexander House<br>
+                                Cybercity, Ebene<br>
+                                Mauritius</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+2304034250">+230 403 4250</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@safyrutilis.com">info@safyrutilis.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                Saturday: 9:00 AM - 1:00 PM<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/company/safyr-utilis/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/p/Safyr-Utilis-100075955965176/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Preview Section -->
+    <section class="insights-preview">
+        <div class="container">
+            <div class="insights-preview__header">
+                <h2>Latest Insights & News</h2>
+                <p>Stay informed with our latest industry insights, regulatory updates, and company news.</p>
+            </div>
+            
+            <div class="insights-preview__grid">
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <div class="insight-category">Breaking News</div>
+                        <img src="assets/images/mauritius-business.jpg" alt="Mauritius Business">
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-date">
+                            <i class="fas fa-calendar"></i>
+                            June 15, 2024
+                        </div>
+                        <h3>Mauritius Reinforces Position as Premier Investment Hub</h3>
+                        <p>New regulatory changes enhance Mauritius' standing as a preferred jurisdiction for cross-border investments into Africa.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <div class="insight-category">Events</div>
+                        <img src="assets/images/wealth-structuring.jpg" alt="Finance Summit">
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-date">
+                            <i class="fas fa-calendar"></i>
+                            May 28, 2024
+                        </div>
+                        <h3>Safyr Utilis Sponsors Annual Africa Finance Summit</h3>
+                        <p>Our team participated in the prestigious Africa Finance Summit, showcasing Mauritius as the gateway for investment.</p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-image">
+                        <div class="insight-category">Innovation</div>
+                        <img src="assets/images/corporate-advisory.jpg" alt="Digital Transformation">
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-date">
+                            <i class="fas fa-calendar"></i>
+                            May 10, 2024
+                        </div>
+                        <h3>Digital Transformation in Financial Services</h3>
+                        <p>Safyr Utilis implements cutting-edge digital solutions to enhance client experience and streamline processes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insights-preview__cta">
+                <a href="insights.html" class="btn btn--primary">View All Insights</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Safyr Utilis?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our experienced professionals bring decades of combined expertise in international business and financial services.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>Access to a worldwide network of partners and professionals to support your international business needs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Stay compliant with all regulatory requirements through our expert guidance and monitoring services.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>Tailored solutions designed specifically for your business requirements and long-term objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Left Section: Branding & Tagline -->
+                <div class="footer-branding">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+                    </div>
+                    <div class="footer-tagline">
+                        <span>Building</span>
+                        <span>Together</span>
+                    </div>
+                </div>
+
+                <!-- Middle Section: Navigation Links -->
+                <div class="footer-navigation">
+                    <div class="footer-nav-column">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="wealth-structuring.html">Wealth Structuring</a></li>
+                            <li><a href="fund-administration.html">Fund Administration</a></li>
+                            <li><a href="corporate-services.html">Corporate Services</a></li>
+                            <li><a href="tax-accounting.html">Tax & Accounting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4>About Safyr</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="why-mauritius.html">Why Mauritius</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="tel:+2304034250">(+230) 403 4250</a></li>
+                            <li><a href="mailto:info@syul.mu">info@syul.mu</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Legal Links, Copyright & Social Media -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy policy</a>
+                        <a href="terms.html">Terms of services</a>
+                        <a href="cookie-policy.html">Cookie policy</a>
+                        <a href="accessibility.html">Accessibility</a>
+                    </div>
+                    <div class="copyright">
+                        © 2025 Safyr Utilis. All rights reserved.
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <span class="social-heading">Follow us:</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/safyr-utilis/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/Safyr-Utilis-100075955965176/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

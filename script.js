@@ -569,3 +569,92 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 }); 
+
+// Multi-step form functionality
+let currentStep = 1;
+const totalSteps = 3;
+
+function nextStep() {
+    if (currentStep < totalSteps) {
+        // Hide current step
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        
+        // Show next step
+        currentStep++;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        
+        // Update progress bar
+        updateProgressBar();
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        // Hide current step
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        
+        // Show previous step
+        currentStep--;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        
+        // Update progress bar
+        updateProgressBar();
+    }
+}
+
+function updateProgressBar() {
+    const progressPercentage = (currentStep / totalSteps) * 100;
+    const progressText = document.querySelector('.progress-text');
+    const progressFill = document.querySelector('.progress-fill');
+    
+    if (progressText && progressFill) {
+        progressText.textContent = `${Math.round(progressPercentage)}%`;
+        progressFill.style.width = `${progressPercentage}%`;
+    }
+}
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('.hawksford-form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect all form data from all steps
+            const formData = new FormData();
+            
+            // Add data from all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                const stepForm = document.querySelector(`#step${i} .hawksford-form`);
+                if (stepForm) {
+                    const stepData = new FormData(stepForm);
+                    for (let [key, value] of stepData.entries()) {
+                        formData.append(key, value);
+                    }
+                }
+            }
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted with data:', Object.fromEntries(formData));
+            
+            // Show success message or redirect
+            alert('Thank you for your enquiry! We will get back to you within 24 hours.');
+            
+            // Reset form and go back to step 1
+            currentStep = 1;
+            document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+            document.getElementById('step1').classList.add('active');
+            updateProgressBar();
+            
+            // Reset all form fields
+            document.querySelectorAll('.hawksford-form input, .hawksford-form select, .hawksford-form textarea').forEach(field => {
+                if (field.type === 'checkbox') {
+                    field.checked = false;
+                } else {
+                    field.value = '';
+                }
+            });
+        });
+    });
+}); 
