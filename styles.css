@@ -5388,14 +5388,14 @@ button {
 }
 
 .footer-logo {
-    max-width: 200px;
+    max-width: 260px;
     margin-bottom: 15px;
 }
 
 .footer-logo img {
     width: 100%;
     height: auto;
-    max-width: 200px;
+    max-width: 260px;
     display: block;
     transition: all 0.3s ease;
 }

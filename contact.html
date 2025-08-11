@@ -15,7 +15,7 @@
             </a>
             
             <nav class="header__nav">
-                <a href="who-we-are.html" class="nav__link">Who We Are</a>
+                <a href="who-we-are.html" class="nav__link">About Us</a>
                 <span class="nav__divider">|</span>
                 <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
                 <span class="nav__divider">|</span>
@@ -96,161 +96,7 @@
         </div>
     </section>
     <br><br>
-    <!-- Multi-Step Contact Form Section -->
-    <section class="hawksford-form-section">
-
-        <div class="hawksford-form-grid">
-            <!-- Left Column: Content -->
-
-            <div class="hawksford-form-content">
-                <div class="red-accent-bar"></div>
-                <h2>Let us take care of your entity set up so you can focus on what matters most</h2>
-                <p>With the ever-increasing complexity around the world let Safyr Utilis' expertise nurture your business growth so you can focus on your customers.</p>
-            </div>
-            
-            <!-- Right Column: Multi-Step Form -->
-            <div class="hawksford-form-container">
-                <!-- Step 1: Personal Information -->
-                <div class="form-step active" id="step1">
-                    <h3>Please tell us more about yourself so that one of our experts can respond to your enquiry...</h3>
-                    <form class="hawksford-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First name*</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last name*</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Company email*</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone number*</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+230 ********" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="jobTitle">Job Title*</label>
-                                <input type="text" id="jobTitle" name="jobTitle" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Country of residence*</label>
-                                <select id="country" name="country" required>
-                                    <option value="">Select country</option>
-                                    <option value="Mauritius">Mauritius</option>
-                                    <option value="United States">United States</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="Singapore">Singapore</option>
-                                    <option value="South Africa">South Africa</option>
-                                    <option value="Kenya">Kenya</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="progress-section">
-                            <span class="progress-text">33%</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 33%"></div>
-                            </div>
-                        </div>
-                        <button type="button" class="next-btn" onclick="nextStep()">Next</button>
-                    </form>
-                </div>
-
-                <!-- Step 2: Company Information -->
-                <div class="form-step" id="step2">
-                    <h3>Please provide further information in regards to your enquiry so we can provide the best support...</h3>
-                    <form class="hawksford-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="companyName">Company name*</label>
-                                <input type="text" id="companyName" name="companyName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="industry">Industry/Sector*</label>
-                                <select id="industry" name="industry" required>
-                                    <option value="">Select industry</option>
-                                    <option value="Financial Services">Financial Services</option>
-                                    <option value="Technology">Technology</option>
-                                    <option value="Manufacturing">Manufacturing</option>
-                                    <option value="Real Estate">Real Estate</option>
-                                    <option value="Healthcare">Healthcare</option>
-                                    <option value="Retail">Retail</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="serviceCountry">Which country do you require the service in?*</label>
-                                <select id="serviceCountry" name="serviceCountry" required>
-                                    <option value="">Select country</option>
-                                    <option value="Mauritius">Mauritius</option>
-                                    <option value="Singapore">Singapore</option>
-                                    <option value="Hong Kong">Hong Kong</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="United States">United States</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="enquiryDetails">Please provide further details in relation to your enquiry...*</label>
-                            <textarea id="enquiryDetails" name="enquiryDetails" rows="4" required></textarea>
-                        </div>
-                        <div class="progress-section">
-                            <span class="progress-text">66%</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 66%"></div>
-                            </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="prev-btn" onclick="prevStep()">Previous</button>
-                            <button type="button" class="next-btn" onclick="nextStep()">Next</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 3: Privacy Preferences -->
-                <div class="form-step" id="step3">
-                    <h3>From a privacy and policy perspective we now need your preferences...</h3>
-                    <p class="form-description">From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you:</p>
-                    
-                    <form class="hawksford-form">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="communications" name="communications" required>
-                            <label for="communications">I agree to receive communications from Safyr Utilis.*</label>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="marketing" name="marketing">
-                            <label for="marketing">I would like to receive relevant marketing communications from Safyr Utilis (including Newsletter).</label>
-                        </div>
-                        
-                        <div class="privacy-notice">
-                            <p>Safyr Utilis is committed to protecting and respecting your privacy, and we'll only use your personal information to administer your account and to provide the products and services you requested from us. You can unsubscribe at any time. For more information, please review our <a href="#" class="privacy-link">Privacy Notice</a>.</p>
-                            <p>By clicking submit below, you consent to allow safyrutilis.com to store and process the personal information submitted above to provide you the content requested.</p>
-                        </div>
-                        
-                        <div class="progress-section">
-                            <span class="progress-text">100%</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" class="prev-btn" onclick="prevStep()">Previous</button>
-                            <button type="submit" class="submit-btn">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Multi-Step Contact Form moved to standalone page register-entity.html -->
 
     <!-- Contact Hero Section -->
     <section class="contact-hero">
@@ -337,8 +183,8 @@
                             </div>
                             <div class="contact-details">
                                 <h4>Office Address</h4>
-                                <p>Level 3, Alexander House<br>
-                                Cybercity, Ebene<br>
+                                <p>NeXTeracom Tower 1, 7th Floor<br>
+                                Ebene<br>
                                 Mauritius</p>
                             </div>
                         </div>
@@ -359,7 +205,7 @@
                             </div>
                             <div class="contact-details">
                                 <h4>Email</h4>
-                                <p><a href="mailto:info@safyrutilis.com">info@safyrutilis.com</a></p>
+                                <p><a href="mailto:info@syul.mu">info@syul.mu</a></p>
                             </div>
                         </div>
                         
@@ -369,9 +215,7 @@
                             </div>
                             <div class="contact-details">
                                 <h4>Business Hours</h4>
-                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
-                                Saturday: 9:00 AM - 1:00 PM<br>
-                                Sunday: Closed</p>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -496,7 +340,7 @@
                 <!-- Left Section: Branding & Tagline -->
                 <div class="footer-branding">
                     <div class="footer-logo">
-                        <img src="assets/logo.svg" alt="Safyr Utilis Logo">
+                        <img src="assets/logo1.png" alt="Safyr Utilis Logo">
                     </div>
                     <div class="footer-tagline">
                         <span>Building</span>
@@ -518,7 +362,7 @@
                     <div class="footer-nav-column">
                         <h4>About Safyr</h4>
                         <ul>
-                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="who-we-are.html">About Us</a></li>
                             <li><a href="why-mauritius.html">Why Mauritius</a></li>
                             <li><a href="insights.html">Insights</a></li>
                             <li><a href="careers.html">Careers</a></li>
