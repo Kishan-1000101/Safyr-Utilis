@@ -3102,6 +3102,7 @@ html {
   transform: translateY(0);
 }
 
+.reach-out {
   color: white;
   position: relative;
   overflow: hidden;
@@ -3628,8 +3629,6 @@ html {
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
 }
 
 .insights .container {
@@ -4581,15 +4580,9 @@ button {
 
 .stats-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
-    gap: 30px; /* Increased gap between columns */
-    margin-bottom: 30px; /* Increased margin between rows */
-}
-
-.stats-column {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid within each column */
-    gap: 15px; /* Gap between cards within column */
+    grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns */
+    gap: 20px; /* Gap between cards */
+    margin-bottom: 30px; /* Margin between rows */
 }
 
 .stat-card {
@@ -4668,7 +4661,7 @@ button {
     padding: 0;
   position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
 }
@@ -4676,7 +4669,7 @@ button {
 .cta-diagonal-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
   position: relative;
 }
 
@@ -4797,8 +4790,8 @@ button {
 .cta-text-content {
     position: relative;
     z-index: 2;
-    max-width: 500px;
-    padding: 60px;
+    max-width: 550px;
+    padding: 50px;
     text-align: left;
 }
 
@@ -4806,15 +4799,15 @@ button {
     font-size: 3rem;
     font-weight: 700;
     color: #0f294b;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     line-height: 1.2;
 }
 
 .cta-text-content p {
     font-size: 1.3rem;
     color: #6c757d;
-    line-height: 1.6;
-    margin-bottom: 40px;
+    line-height: 1.5;
+    margin-bottom: 35px;
 }
 
 .cta-actions {
@@ -4825,8 +4818,8 @@ button {
 .cta-actions .btn--primary {
     background: linear-gradient(135deg, #f8a01b 0%, #ffc96b 100%);
     color: white;
-    padding: 15px 30px;
-    font-size: 1.1rem;
+    padding: 18px 35px;
+    font-size: 1.2rem;
     font-weight: 600;
     border: none;
     border-radius: 8px;
@@ -4842,6 +4835,11 @@ button {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
     .cta-person-image {
         width: 100%;
         height: 100%;
@@ -4853,12 +4851,24 @@ button {
         opacity: 0.15;
     }
     
+    .cta-text-content {
+        max-width: 500px;
+        padding: 40px;
+    }
+    
     .cta-text-content h2 {
         font-size: 2.5rem;
+        margin-bottom: 20px;
     }
     
     .cta-text-content p {
         font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .cta-actions .btn--primary {
+        padding: 16px 32px;
+        font-size: 1.1rem;
     }
 }
 
@@ -4910,13 +4920,22 @@ button {
 }
 
 @media (max-width: 768px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
     .cta-section {
         min-height: auto;
     }
     
+    .cta-diagonal-container {
+        height: 50vh;
+    }
+    
     .cta-visual-section {
-        height: 40vh;
-        min-height: 300px;
+        height: 30vh;
+        min-height: 250px;
     }
     
     .cta-person-image {
@@ -4951,22 +4970,24 @@ button {
     }
     
     .cta-content-section {
-        height: 60vh;
-        min-height: 350px;
+        height: 50vh;
+        min-height: 300px;
     }
     
     .cta-text-content {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        max-width: 100%;
     }
     
     .cta-text-content h2 {
         font-size: 1.8rem;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     
     .cta-text-content p {
         font-size: 1rem;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        line-height: 1.4;
     }
     
     .cta-actions {
@@ -4974,7 +4995,7 @@ button {
     }
     
     .cta-actions .btn--primary {
-        padding: 12px 25px;
+        padding: 14px 28px;
         font-size: 1rem;
     }
 }

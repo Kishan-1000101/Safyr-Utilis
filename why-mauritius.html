@@ -11,17 +11,142 @@
             padding: 80px 0;
         }
         
+        #why-mauritius {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0 80px 0;
+            position: relative;
+        }
+        
+        #why-mauritius::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+        }
+        
+        .section-header {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-color), #fbbf24);
+            border-radius: 2px;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .why-mauritius-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .why-mauritius-text {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .text-block {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(248, 160, 27, 0.02) 0%, rgba(15, 41, 75, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .text-block:hover::before {
+            opacity: 1;
+        }
+        
+        .text-block:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+        
+        .text-block h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .text-block h3 i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .text-block p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
         .mauritius-hero {
             position: relative;
             background-image: url('assets/images/mauritius-business.jpg');
             background-size: cover;
             background-position: center;
-            height: 500px;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+        }
+        
+        .mauritius-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            z-index: 1;
         }
         
         .mauritius-hero::before {   
@@ -36,8 +161,8 @@
         
         .mauritius-hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 800px;
+            z-index: 2;
+            max-width: 900px;
             padding: 0 20px;
         }
         
@@ -54,7 +179,7 @@
         
         .advantage-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
@@ -167,6 +292,33 @@
             .advantage-grid, .living-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            
+            .why-mauritius-text {
+                gap: 25px;
+            }
+            
+            .text-block {
+                padding: 30px 25px;
+            }
+            
+            .text-block h3 {
+                font-size: 1.2rem;
+            }
+            
+            .text-block p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .advantage-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .text-block {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -281,165 +433,148 @@
             </div>
             
             <div class="stats-container">
-                <!-- Row 1: Economic & Financial Indicators -->
+                <!-- Row 1 -->
                 <div class="stats-row">
-                    <!-- Column 1: Economic Indicators -->
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div class="stat-number">46</div>
-                            <div class="stat-label">DTAAs</div>
-                            <div class="stat-description">Double Taxation Avoidance Agreements</div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="stat-number">7.8%</div>
-                            <div class="stat-label">GDP Growth</div>
-                            <div class="stat-description">Real GDP Growth Rate</div>
-                        </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="stat-number">13th</div>
-                            <div class="stat-label">Global Ranking</div>
-                            <div class="stat-description">Ease of Doing Business</div>
-                        </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="stat-number">29</div>
-                            <div class="stat-label">IPPAs</div>
-                            <div class="stat-description">Investment Protection Agreements</div>
-                        </div>
+                        <div class="stat-number">46</div>
+                        <div class="stat-label">DTAAs</div>
+                        <div class="stat-description">Double Taxation Avoidance Agreements</div>
                     </div>
-
-                    <!-- Column 2: Financial Metrics -->
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="stat-number">$9,920</div>
-                            <div class="stat-label">GNI per Capita</div>
-                            <div class="stat-description">Gross National Income</div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="stat-number">52nd</div>
-                            <div class="stat-label">Global Competitiveness</div>
-                            <div class="stat-description">World Economic Forum Ranking</div>
+                        <div class="stat-number">7.8%</div>
+                        <div class="stat-label">GDP Growth</div>
+                        <div class="stat-description">Real GDP Growth Rate</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-percentage"></i>
-                            </div>
-                            <div class="stat-number">13.2%</div>
-                            <div class="stat-label">Financial Services</div>
-                            <div class="stat-description">Share of GDP</div>
+                        <div class="stat-number">29</div>
+                        <div class="stat-label">IPPAs</div>
+                        <div class="stat-description">Investment Protection Agreements</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-wallet"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="stat-number">Baa3</div>
-                            <div class="stat-label">Credit Rating</div>
-                            <div class="stat-description">Moody's (Stable Outlook)</div>
-                        </div>
+                        <div class="stat-number">$9,920</div>
+                        <div class="stat-label">GNI per Capita</div>
+                        <div class="stat-description">Gross National Income</div>
                     </div>
                 </div>
 
-                <!-- Row 2: Business Environment & Demographics -->
+                <!-- Row 2 -->
                 <div class="stats-row">
-                    <!-- Column 3: Business Environment -->
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div class="stat-number">Hybrid</div>
-                            <div class="stat-label">Legal System</div>
-                            <div class="stat-description">French-Napoleon & British Common Law</div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-percentage"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="stat-number">15%</div>
-                            <div class="stat-label">Corporate Tax</div>
-                            <div class="stat-description">Flat Rate & VAT</div>
-                        </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <div class="stat-number">0-20%</div>
-                            <div class="stat-label">Income Tax</div>
-                            <div class="stat-description">Progressive Tax System</div>
-                        </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="stat-number">OECD</div>
-                            <div class="stat-label">Compliance</div>
-                            <div class="stat-description">White List Status</div>
-                        </div>
+                        <div class="stat-number">13.2%</div>
+                        <div class="stat-label">Financial Services</div>
+                        <div class="stat-description">Share of GDP</div>
                     </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-number">Baa3</div>
+                        <div class="stat-label">Credit Rating</div>
+                        <div class="stat-description">Moody's (Stable Outlook)</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="stat-number">Hybrid</div>
+                        <div class="stat-label">Legal System</div>
+                        <div class="stat-description">French-Napoleon & British Common Law</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Corporate Tax</div>
+                        <div class="stat-description">Flat Rate & VAT</div>
+                    </div>
+                </div>
 
-                    <!-- Column 4: Demographics & Infrastructure -->
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-number">1.3M</div>
-                            <div class="stat-label">Population</div>
-                            <div class="stat-description">92.15% Literacy Rate</div>
+                <!-- Row 3 -->
+                <div class="stats-row">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="stat-number">4</div>
-                            <div class="stat-label">Languages</div>
-                            <div class="stat-description">English, French, Creole, Asian</div>
+                        <div class="stat-number">0-20%</div>
+                        <div class="stat-label">Income Tax</div>
+                        <div class="stat-description">Progressive Tax System</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <div class="stat-number">2nd</div>
-                            <div class="stat-label">Stock Exchange</div>
-                            <div class="stat-description">Africa - 90% Market Cap to GDP</div>
+                        <div class="stat-number">OECD</div>
+                        <div class="stat-label">Compliance</div>
+                        <div class="stat-description">White List Status</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        
-                        <div class="stat-card animate-on-scroll">
-                            <div class="stat-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="stat-number">FATF</div>
-                            <div class="stat-label">Compliant</div>
-                            <div class="stat-description">Anti-Money Laundering Standards</div>
+                        <div class="stat-number">1.3M</div>
+                        <div class="stat-label">Population</div>
+                        <div class="stat-description">92.15% Literacy Rate</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon">
+                            <i class="fas fa-comments"></i>
                         </div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Languages</div>
+                        <div class="stat-description">English, French, Creole, Asian</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Mauritius Section -->
+    <section class="mauritius-section" id="why-mauritius">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-subtitle animate-on-scroll">A premier destination for business and investment in Africa</p>
+            </div>
+            
+            <div class="why-mauritius-content">
+                <div class="why-mauritius-text">
+                    <div class="text-block animate-on-scroll">
+                        <h3><i class="fas fa-chart-line"></i> Leading Performance</h3>
+                        <p>The country is amongst the best-performing in Africa across a range of indices, including business, regulatory and macroeconomic environment and quality of living.</p>
+                    </div>
+                    
+                    <div class="text-block animate-on-scroll">
+                        <h3><i class="fas fa-network-wired"></i> Modern Infrastructure</h3>
+                        <p>Mauritius also enjoys state-of-the-art infrastructure and communications networks, a diversified banking system, as well as a skilled, professional and bilingual workforce fluent in both English and French.</p>
+                    </div>
+                    
+                    <div class="text-block animate-on-scroll">
+                        <h3><i class="fas fa-handshake"></i> International Partnerships</h3>
+                        <p>In addition to being part of African Regional Economic Communities such as the Southern African Development Community (SADC) and the Common Market for Eastern and Southern Africa (COMESA), Mauritius is a signatory to a number of Double Taxation Avoidance Agreements and Investment Protection and Promotion Agreements.</p>
                     </div>
                 </div>
             </div>
@@ -508,7 +643,7 @@
     <section class="living-section" id="work-and-live">
         <div class="container">
             <h2 class="animate-on-scroll">Work and Live in Mauritius</h2>
-            <p class="animate-on-scroll">Mauritius offers an exceptional quality of life with its stunning natural beauty, modern infrastructure, and multicultural society. The country welcomes expatriates and provides various residence options for those looking to relocate.</p>
+            <p class="animate-on-scroll">Mauritius is more than just a tropical island; it is a thriving hub for high-quality living, business and investment. Surrounded by turquoise lagoons and lush green landscapes, the country also boasts excellent infrastructure, political stability, and a welcoming community. Its multicultural heritage is reflected in everything from architecture and cuisine to the island's rich calendar of festivals, creating a vibrant lifestyle where the warmth of tradition is seamlessly woven into modern living. This rich cultural fabric also informs business practices, fostering an environment where innovation and tradition coexist harmoniously. For those looking to relocate, Mauritius offers a variety of residence pathways, including the Occupation Permit, Residence Permit and Permanent Residence Permit, as well as other attractive options such as the Property Development Scheme, Premium Visa/Digital Nomad Visa and Family Occupation Permit - making it easy to find the perfect fit for your lifestyle and ambitions.</p>
             
             <div class="living-grid">
                 <div class="living-card animate-on-scroll">
@@ -570,33 +705,96 @@
             <!-- Reusing same stats content by reference would be ideal; duplicating for static site -->
             <!-- Row 1 -->
             <div class="stats-container">
+                <!-- Row 1 -->
                 <div class="stats-row">
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-handshake"></i></div><div class="stat-number">46</div><div class="stat-label">DTAAs</div><div class="stat-description">Double Taxation Avoidance Agreements</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">7.8%</div><div class="stat-label">GDP Growth</div><div class="stat-description">Real GDP Growth Rate</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-trophy"></i></div><div class="stat-number">13th</div><div class="stat-label">Global Ranking</div><div class="stat-description">Ease of Doing Business</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-building"></i></div><div class="stat-number">29</div><div class="stat-label">IPPAs</div><div class="stat-description">Investment Protection Agreements</div></div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="stat-number">46</div>
+                        <div class="stat-label">DTAAs</div>
+                        <div class="stat-description">Double Taxation Avoidance Agreements</div>
                     </div>
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-wallet"></i></div><div class="stat-number">$9,920</div><div class="stat-label">GNI per Capita</div><div class="stat-description">Gross National Income</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-globe"></i></div><div class="stat-number">52nd</div><div class="stat-label">Global Competitiveness</div><div class="stat-description">World Economic Forum Ranking</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-percentage"></i></div><div class="stat-number">13.2%</div><div class="stat-label">Financial Services</div><div class="stat-description">Share of GDP</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">Baa3</div><div class="stat-label">Credit Rating</div><div class="stat-description">Moody's (Stable Outlook)</div></div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-number">7.8%</div>
+                        <div class="stat-label">GDP Growth</div>
+                        <div class="stat-description">Real GDP Growth Rate</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                        <div class="stat-number">29</div>
+                        <div class="stat-label">IPPAs</div>
+                        <div class="stat-description">Investment Protection Agreements</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-number">$9,920</div>
+                        <div class="stat-label">GNI per Capita</div>
+                        <div class="stat-description">Gross National Income</div>
                     </div>
                 </div>
+
                 <!-- Row 2 -->
                 <div class="stats-row">
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-balance-scale"></i></div><div class="stat-number">Hybrid</div><div class="stat-label">Legal System</div><div class="stat-description">French-Napoleon & British Common Law</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-briefcase"></i></div><div class="stat-number">15%</div><div class="stat-label">Corporate Tax</div><div class="stat-description">Flat Rate & VAT</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-money-bill-wave"></i></div><div class="stat-number">0-20%</div><div class="stat-label">Income Tax</div><div class="stat-description">Progressive Tax System</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-check-circle"></i></div><div class="stat-number">OECD</div><div class="stat-label">Compliance</div><div class="stat-description">White List Status</div></div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+                        <div class="stat-number">13.2%</div>
+                        <div class="stat-label">Financial Services</div>
+                        <div class="stat-description">Share of GDP</div>
                     </div>
-                    <div class="stats-column">
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">1.3M</div><div class="stat-label">Population</div><div class="stat-description">92.15% Literacy Rate</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-comments"></i></div><div class="stat-number">4</div><div class="stat-label">Languages</div><div class="stat-description">English, French, Creole, Asian</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-chart-bar"></i></div><div class="stat-number">2nd</div><div class="stat-label">Stock Exchange</div><div class="stat-description">Africa - 90% Market Cap to GDP</div></div>
-                        <div class="stat-card animate-on-scroll"><div class="stat-icon"><i class="fas fa-shield-alt"></i></div><div class="stat-number">FATF</div><div class="stat-label">Compliant</div><div class="stat-description">Anti-Money Laundering Standards</div></div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <div class="stat-number">Baa3</div>
+                        <div class="stat-label">Credit Rating</div>
+                        <div class="stat-description">Moody's (Stable Outlook)</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-balance-scale"></i></div>
+                        <div class="stat-number">Hybrid</div>
+                        <div class="stat-label">Legal System</div>
+                        <div class="stat-description">French-Napoleon & British Common Law</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Corporate Tax</div>
+                        <div class="stat-description">Flat Rate & VAT</div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="stats-row">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <div class="stat-number">0-20%</div>
+                        <div class="stat-label">Income Tax</div>
+                        <div class="stat-description">Progressive Tax System</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-number">OECD</div>
+                        <div class="stat-label">Compliance</div>
+                        <div class="stat-description">White List Status</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number">1.3M</div>
+                        <div class="stat-label">Population</div>
+                        <div class="stat-description">92.15% Literacy Rate</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-icon"><i class="fas fa-comments"></i></div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Languages</div>
+                        <div class="stat-description">English, French, Creole, Asian</div>
                     </div>
                 </div>
             </div>
@@ -608,9 +806,26 @@
         <div class="container">
             <h2 class="animate-on-scroll">International Accolades</h2>
             <div class="advantage-grid">
-                <div class="advantage-card animate-on-scroll"><div class="advantage-icon"><i class="fas fa-award"></i></div><h3>Ease of Doing Business</h3><p>Consistently ranked among the top in Africa for ease of doing business and regulatory quality.</p></div>
-                <div class="advantage-card animate-on-scroll"><div class="advantage-icon"><i class="fas fa-medal"></i></div><h3>Global Competitiveness</h3><p>Recognized by the World Economic Forum for competitive institutions and market efficiency.</p></div>
-                <div class="advantage-card animate-on-scroll"><div class="advantage-icon"><i class="fas fa-shield-alt"></i></div><h3>AML/Compliance</h3><p>Respected global compliance standards with FATF-compliant AML framework.</p></div>
+                <div class="advantage-card animate-on-scroll">
+                    <div class="advantage-icon"><i class="fas fa-award"></i></div>
+                    <h3>Ease of Doing Business</h3>
+                    <p>Consistently ranked among the top in Africa for ease of doing business and regulatory quality. Ranked 13th globally for ease of doing business.</p>
+                </div>
+                <div class="advantage-card animate-on-scroll">
+                    <div class="advantage-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Global Competitiveness</h3>
+                    <p>Recognized by the World Economic Forum for competitive institutions and market efficiency. Ranked 52nd in global competitiveness.</p>
+                </div>
+                <div class="advantage-card animate-on-scroll">
+                    <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>AML/Compliance</h3>
+                    <p>Respected global compliance standards with FATF-compliant AML framework. Fully compliant with international standards.</p>
+                </div>
+                <div class="advantage-card animate-on-scroll">
+                    <div class="advantage-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>2nd Stock Exchange</h3>
+                    <p>Africa - 90% Market Cap to GDP. Second largest stock exchange in Africa.</p>
+                </div>
             </div>
         </div>
     </section>

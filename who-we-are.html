@@ -127,56 +127,83 @@
             margin-top: 40px;
         }
         
+        /* Hawksford-inspired Team Member Design */
         .team-member {
             background-color: white;
-            border-radius: 0;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
         
         .team-member:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
         
         .team-member-image {
-            height: 360px;
+            height: 320px;
             overflow: hidden;
             position: relative;
+            background-color: #0f294b; /* Navy blue background */
         }
         
-        .team-member-image::after {
-            content: "";
+        /* Background logo */
+        .team-member-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .team-logo-bg {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            opacity: 0.4;
+            z-index: 2;
+        }
+        
+        /* Team member photo */
+        .team-member-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 3;
+            opacity: 1;
+        }
+        
+        /* Leadership banner */
+        .leadership-banner {
             position: absolute;
             bottom: 0;
             right: 0;
-            background: linear-gradient(135deg, transparent 0%, transparent 50%, #003d4d 50%, #003d4d 100%);
+            background: #0f294b;
             color: white;
-            padding: 50px 20px 10px 60px;
+            padding: 12px 20px;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            width: 200px;
-            text-align: right;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            z-index: 4;
+            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+            transition: background-color 0.3s ease;
         }
         
-        .team-member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+        .team-member:hover .leadership-banner {
+            background: var(--accent-color);
         }
         
-        .team-member:hover .team-member-image img {
-            transform: scale(1.05);
-        }
-        
-        .team-member:hover .team-member-image::after {
-            background: linear-gradient(135deg, transparent 0%, transparent 50%, var(--accent-color) 50%, var(--accent-color) 100%);
-        }
+
         
         .team-member-info {
             padding: 25px 20px;
@@ -186,8 +213,8 @@
         
         .team-member-info h3 {
             margin-bottom: 5px;
-            color: #003d4d;
-            font-size: 20px;
+            color: #0f294b;
+            font-size: 18px;
             font-weight: 600;
             transition: color 0.3s ease;
         }
@@ -200,26 +227,36 @@
             font-weight: normal;
             color: #666;
             margin-bottom: 15px;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
-        .team-social {
+        .team-contact {
             display: flex;
             gap: 15px;
             margin-top: 15px;
         }
         
-        .team-social a {
-            color: #003d4d;
+        .team-contact a {
+            color: #0f294b;
             font-size: 16px;
             transition: color 0.3s ease;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
         }
         
-        .team-social a:hover {
-            color: var(--accent-color);
+        .team-contact a:hover {
+            color: white;
+            background: var(--accent-color);
+            transform: translateY(-2px);
         }
         
         .safyr-capital {
@@ -292,11 +329,59 @@
             }
             
             .team-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 30px;
             }
             
             .team-member-image {
-                height: 250px;
+                height: 280px;
+            }
+            
+            .team-logo-bg {
+                width: 65px;
+                height: 65px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .leadership-banner {
+                font-size: 12px;
+                padding: 10px 16px;
+            }
+            
+
+            
+            .team-member-info {
+                padding: 20px 15px;
+            }
+            
+            .team-member-info h3 {
+                font-size: 16px;
+            }
+            
+            .team-member-info h4 {
+                font-size: 12px;
+            }
+            
+            .team-contact {
+                gap: 12px;
+            }
+            
+            .team-contact a {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .team-member-image {
+                height: 260px;
             }
         }
     </style>
@@ -402,8 +487,8 @@
             <div class="about-container">
                 <div class="about-text">
                     <h2>About Safyr Utilis</h2>
-                    <p>Safyr Utilis is part of a financial services group based in Mauritius, combining wealth structuring and fund administration with an investment banking reach.</p>
-                    <p>Established following the merger of Safyr Wealth Services Ltd and Utilis Corporate Services Ltd, Safyr Utilis offers specialist services in wealth structuring, including international companies and trusts, corporate services, tax, accounting and regulatory services, fund administration and business solutions such as work, and residency permits.</p>
+                    <p>Established in 2016, Safyr Utilis is a licenced corporate service provider, which forms part of the Safyr group in Mauritius. Its expertise spans corporate and fund administration, wealth structuring, and capital markets, investment banking solutions, offering tailored solutions for a diverse clientele. Safyr Utilis serves African, US, Asian, Middle East and European markets, leveraging deep industry knowledge and strategic partnerships.</p>
+                    <p>Its dedicated team, comprising seasoned professionals and in-house experts like lawyers, accountants, and tax advisors, is committed to delivering superior client service. Whether navigating complex fund strategies or safeguarding wealth, Safyr Utilis ensures excellence in every aspect of financial management. Safyr Utilis has its headquarters in Mauritius with offices in Seychelles and South Africa and operates internationally.</p>
                 </div>
                 <div class="about-image">
                     <img src="assets/images/corporate-advisory.jpg" alt="Safyr Utilis Office">
@@ -419,86 +504,122 @@
             <p class="text-center">Meet the experienced professionals who lead Safyr Utilis with expertise and vision.</p>
             
             <div class="team-grid">
+                <!-- Deva Marianen - Chairperson & Founder -->
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="assets/images/corporate-advisory.jpg" alt="Reshan Rambocus">
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
+                        </div>
+                        <img src="assets/Profile.png" alt="Deva Marianen" class="team-member-photo">
+                        <div class="leadership-banner"></div>
+                    </div>
+                    <div class="team-member-info">
+                        <h3>Deva Marianen</h3>
+                        <h4>Chairperson & Founder</h4>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:deva@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reshan Rambocus - Founder -->
+                <div class="team-member">
+                    <div class="team-member-image">
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
+                        </div>
+                        <img src="assets/Profile.png" alt="Reshan Rambocus" class="team-member-photo">
+                        <div class="leadership-banner"></div>
                     </div>
                     <div class="team-member-info">
                         <h3>Reshan Rambocus</h3>
                         <h4>Founder</h4>
-                        <div class="team-social">
-                            <a href="https://www.linkedin.com/in/reshan-rambocus-b50673aa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:reshan@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:reshan@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.linkedin.com/in/reshan-rambocus-b50673aa/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Kevin Bessoondyal - CEO -->
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="assets/images/wealth-structuring.jpg" alt="Deva Marianen">
-                    </div>
-                    <div class="team-member-info">
-                        <h3>Deva Marianen</h3>
-                        <h4>Chairman & Founder Safyr Group</h4>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:deva@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
                         </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="team-member-image">
-                        <img src="assets/images/mauritius-business.jpg" alt="Kevin Bessoondyal">
+                        <img src="assets/Profile.png" alt="Kevin Bessoondyal" class="team-member-photo">
+                        <div class="leadership-banner"></div>
                     </div>
                     <div class="team-member-info">
                         <h3>Kevin Bessoondyal</h3>
                         <h4>CEO</h4>
-                        <div class="team-social">
-                            <a href="https://www.linkedin.com/in/kevin-bessoondyal" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:kevin@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:kevin@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.linkedin.com/in/kevin-bessoondyal" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Shaheen Coowar - Head of Client Services -->
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="assets/images/corporate-advisory.jpg" alt="Shaheen Coowar">
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
+                        </div>
+                        <img src="assets/Profile.png" alt="Shaheen Coowar" class="team-member-photo">
+                        <div class="leadership-banner"></div>
                     </div>
                     <div class="team-member-info">
                         <h3>Shaheen Coowar</h3>
                         <h4>Head of Client Services</h4>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:shaheen@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:shaheen@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Hema Paupiah-Caleechurn - Head of Finance and Administration -->
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="assets/images/wealth-structuring.jpg" alt="Hema Paupiah-Caleechurn">
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
+                        </div>
+                        <img src="assets/Profile.png" alt="Hema Paupiah-Caleechurn" class="team-member-photo">
+                        <div class="leadership-banner"></div>
                     </div>
                     <div class="team-member-info">
                         <h3>Hema Paupiah-Caleechurn</h3>
                         <h4>Head of Finance and Administration</h4>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:hema@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:hema@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Nishta Ramtohul - Senior Manager -->
                 <div class="team-member">
                     <div class="team-member-image">
-                        <img src="assets/images/corporate-advisory.jpg" alt="Nishta Ramtohul">
+                        <div class="team-member-background">
+                            <img src="assets/HeroLogo.png" alt="Safyr Logo" class="team-logo-bg">
+                        </div>
+                        <img src="assets/Profile.png" alt="Nishta Ramtohul" class="team-member-photo">
+                        <div class="leadership-banner"></div>
                     </div>
                     <div class="team-member-info">
                         <h3>Nishta Ramtohul</h3>
                         <h4>Senior Manager – Client Accounting</h4>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="mailto:nishta@safyrutilis.com"><i class="fas fa-envelope"></i></a>
+                        <div class="team-contact">
+                            <a href="tel:+2304034250" title="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:nishta@safyrutilis.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
