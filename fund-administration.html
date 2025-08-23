@@ -497,12 +497,26 @@
             </a>
             
             <nav class="header__nav">
-                <a href="who-we-are.html" class="nav__link">About Us</a>
+                <div class="nav__dropdown">
+                    <span class="nav__link">About Us</span>
+                    <div class="nav__dropdown-content">
+                        <a href="who-we-are.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>About Us</h4>
+                            </div>
+                        </a>
+                        <a href="our-team.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>Our Team</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <span class="nav__divider">|</span>
                 <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
                 <span class="nav__divider">|</span>
                 <div class="nav__dropdown">
-                    <a href="products.html" class="nav__link">Our Expertise</a>
+                    <span class="nav__link">Our Expertise</span>
                     <div class="nav__dropdown-content">
                         <div class="dropdown-services">
                             <div class="dropdown-service-item nested-dropdown">
@@ -576,7 +590,7 @@
         <div class="service-hero__content">
             <div class="service-hero__main">
                 <img src="assets/HeroLogo.png" alt="Safyr Utilis" class="service-hero__logo">
-                <h1 class="service-hero__title">End-to-End Fund Administration Services and Special License Applications</h1>
+                                    <h1 class="service-hero__title">End-to-End Fund Administration Services and Special Licence Applications</h1>
             </div>
             <div class="breadcrumbs">
                 <a href="index.html">Home</a> » <a href="index.html#services">Services</a> » <span>Fund Administration</span>
@@ -591,7 +605,7 @@
             <div class="container">
                 <div class="intro-content">
                     <div class="intro-text">
-                        <h1>End-to-End Fund Administration Services and Special License Applications</h1>
+                        <h1>End-to-End Fund Administration Services and Special Licence Applications</h1>
                         <p>Comprehensive Fund Administration Excellence</p>
                         <p>From inception to maturity, we guide your funds through every stage of their lifecycle with precision, expertise, and unwavering commitment to excellence in the Mauritius financial services landscape.</p>
                     </div>
@@ -686,6 +700,24 @@
             </div>
         </div>
 
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Launch Your Fund?</h2>
+                <p>Partner with Safyr Utilis for comprehensive fund administration services that drive success and ensure compliance in the dynamic Mauritius financial landscape.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-cta btn-primary-cta">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Fund Journey
+                    </a>
+                    <a href="why-mauritius.html" class="btn-cta btn-secondary-cta">
+                        <i class="fas fa-info-circle"></i>
+                        Discover Mauritius Advantages
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Service Navigation -->
         <div class="service-navigation">
             <div class="nav-content">
@@ -704,24 +736,6 @@
                     <a href="tax-accounting.html" class="service-nav-card">
                         <h4>Tax, Accounting & Regulatory</h4>
                         <p>Expert tax planning, accounting, and regulatory compliance services.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Launch Your Fund?</h2>
-                <p>Partner with Safyr Utilis for comprehensive fund administration services that drive success and ensure compliance in the dynamic Mauritius financial landscape.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn-cta btn-primary-cta">
-                        <i class="fas fa-rocket"></i>
-                        Start Your Fund Journey
-                    </a>
-                    <a href="why-mauritius.html" class="btn-cta btn-secondary-cta">
-                        <i class="fas fa-info-circle"></i>
-                        Discover Mauritius Advantages
                     </a>
                 </div>
             </div>
@@ -758,6 +772,7 @@
                         <h4>About Safyr</h4>
                         <ul>
                             <li><a href="who-we-are.html">About Us</a></li>
+                            <li><a href="our-team.html">Our Team</a></li>
                             <li><a href="why-mauritius.html">Why Mauritius</a></li>
                             <li><a href="insights.html">Insights</a></li>
                             <li><a href="careers.html">Careers</a></li>

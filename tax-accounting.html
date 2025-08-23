@@ -497,12 +497,26 @@
             </a>
             
             <nav class="header__nav">
-                <a href="who-we-are.html" class="nav__link">About Us</a>
+                <div class="nav__dropdown">
+                    <span class="nav__link">About Us</span>
+                    <div class="nav__dropdown-content">
+                        <a href="who-we-are.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>About Us</h4>
+                            </div>
+                        </a>
+                        <a href="our-team.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>Our Team</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <span class="nav__divider">|</span>
                 <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
                 <span class="nav__divider">|</span>
                 <div class="nav__dropdown">
-                    <a href="products.html" class="nav__link">Our Expertise</a>
+                    <span class="nav__link">Our Expertise</span>
                     <div class="nav__dropdown-content">
                         <div class="dropdown-services">
                             <div class="dropdown-service-item nested-dropdown">
@@ -687,6 +701,24 @@
             </div>
         </div>
 
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Optimize Your Tax Strategy?</h2>
+                <p>Partner with Safyr Utilis for expert tax, accounting, and regulatory services that ensure compliance, optimize performance, and support your business growth in Mauritius and internationally.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-cta btn-primary-cta">
+                        <i class="fas fa-calculator"></i>
+                        Start Your Tax Journey
+                    </a>
+                    <a href="why-mauritius.html" class="btn-cta btn-secondary-cta">
+                        <i class="fas fa-info-circle"></i>
+                        Discover Mauritius Advantages
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Service Navigation -->
         <div class="service-navigation">
             <div class="nav-content">
@@ -705,24 +737,6 @@
                     <a href="corporate-services.html" class="service-nav-card">
                         <h4>Corporate Secretarial</h4>
                         <p>Professional corporate secretarial and administrative services.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Optimize Your Tax Strategy?</h2>
-                <p>Partner with Safyr Utilis for expert tax, accounting, and regulatory services that ensure compliance, optimize performance, and support your business growth in Mauritius and internationally.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn-cta btn-primary-cta">
-                        <i class="fas fa-calculator"></i>
-                        Start Your Tax Journey
-                    </a>
-                    <a href="why-mauritius.html" class="btn-cta btn-secondary-cta">
-                        <i class="fas fa-info-circle"></i>
-                        Discover Mauritius Advantages
                     </a>
                 </div>
             </div>
@@ -759,6 +773,7 @@
                         <h4>About Safyr</h4>
                         <ul>
                             <li><a href="who-we-are.html">About Us</a></li>
+                            <li><a href="our-team.html">Our Team</a></li>
                             <li><a href="why-mauritius.html">Why Mauritius</a></li>
                             <li><a href="insights.html">Insights</a></li>
                             <li><a href="careers.html">Careers</a></li>

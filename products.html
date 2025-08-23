@@ -297,12 +297,26 @@
             </a>
             
             <nav class="header__nav">
-                <a href="who-we-are.html" class="nav__link">About Us</a>
+                <div class="nav__dropdown">
+                    <span class="nav__link">About Us</span>
+                    <div class="nav__dropdown-content">
+                        <a href="who-we-are.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>About Us</h4>
+                            </div>
+                        </a>
+                        <a href="our-team.html" class="dropdown-service-item">
+                            <div class="dropdown-service-text">
+                                <h4>Our Team</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <span class="nav__divider">|</span>
                 <a href="why-mauritius.html" class="nav__link">Why Mauritius</a>
                 <span class="nav__divider">|</span>
                 <div class="nav__dropdown">
-                    <a href="products.html" class="nav__link">Our Expertise</a>
+                    <span class="nav__link">Our Expertise</span>
                     <div class="nav__dropdown-content">
                         <div class="dropdown-services">
                             <div class="dropdown-service-item nested-dropdown">
@@ -400,8 +414,13 @@
                     
                     <ul class="product-list">
                         <li class="product-item">
-                            <a href="#" class="product-link" data-product="gbc-ac">
-                                <h3 class="product-title">Global Business Company (GBC) and Authorised Company (AC)</h3>
+                            <a href="#" class="product-link" data-product="gbc">
+                                <h3 class="product-title">Global Business Company (GBC)</h3>
+                            </a>
+                        </li>
+                        <li class="product-item">
+                            <a href="#" class="product-link" data-product="ac">
+                                <h3 class="product-title">Authorised Company (AC)</h3>
                             </a>
                         </li>
                         <li class="product-item">
@@ -472,15 +491,29 @@
                         </div>
                     </div>
                     
-                    <!-- GBC and AC Content -->
-                    <div class="product-content" id="gbc-ac">
+                    <!-- GBC Content -->
+                    <div class="product-content" id="gbc">
                         <div class="product-badge">Corporate Structure</div>
-                        <h1>Global Business Company (GBC) and Authorised Company (AC)</h1>
+                        <h1>Global Business Company (GBC)</h1>
                         <p>Considering an offshore structure to support your international business goals?</p>
-                        <p>Mauritius offers two main corporate structures for global business: the Global Business Company (GBC) and the Authorised Company (AC). Offering a high degree of confidentiality and flexibility, both structures present viable options, with the choice depending on factors such as the nature of the proposed activities and the target markets.</p>
-                        <p>A GBC is tax resident in Mauritius and, subject to meeting the prescribed substance requirements, may benefit from Mauritius’s extensive network of Double Taxation Avoidance Agreements (DTAAs). While its core business must be conducted outside Mauritius, a GBC is allowed to carry out a portion of its activities locally.</p>
-                        <p>Conversely, an AC is generally considered non-resident for tax purposes in Mauritius and is therefore not subject to Mauritian income tax. This structure is typically used in cases where access to tax treaty benefits is not required.</p>
-                        <p>Both GBCs and ACs are versatile vehicles, commonly used for:</p>
+                        <p>A Global Business Company (GBC) is one of Mauritius's main corporate structures for global business, offering a high degree of confidentiality and flexibility. A GBC is tax resident in Mauritius and, subject to meeting the prescribed substance requirements, may benefit from Mauritius's extensive network of Double Taxation Avoidance Agreements (DTAAs).</p>
+                        <p>While its core business must be conducted outside Mauritius, a GBC is allowed to carry out a portion of its activities locally. This structure is particularly attractive for businesses seeking to leverage Mauritius's tax treaty network while maintaining operational flexibility.</p>
+                        <p>GBCs are versatile vehicles, commonly used for:</p>
+                        <ul>
+                            <li>Investment holding (example: Special Purpose Vehicles – SPVs)</li>
+                            <li>International trading</li>
+                            <li>Other cross-border business activities</li>
+                        </ul>
+                    </div>
+
+                    <!-- AC Content -->
+                    <div class="product-content" id="ac">
+                        <div class="product-badge">Corporate Structure</div>
+                        <h1>Authorised Company (AC)</h1>
+                        <p>Looking for a flexible offshore structure without tax treaty considerations?</p>
+                        <p>An Authorised Company (AC) is another key corporate structure available in Mauritius for global business activities. Unlike a GBC, an AC is generally considered non-resident for tax purposes in Mauritius and is therefore not subject to Mauritian income tax. This structure is typically used in cases where access to tax treaty benefits is not required.</p>
+                        <p>ACs offer the same high degree of confidentiality and flexibility as GBCs, making them an attractive option for businesses that don't need to leverage Mauritius's tax treaty network. The choice between a GBC and an AC often depends on factors such as the nature of the proposed activities and the target markets.</p>
+                        <p>ACs are versatile vehicles, commonly used for:</p>
                         <ul>
                             <li>Investment holding (example: Special Purpose Vehicles – SPVs)</li>
                             <li>International trading</li>
@@ -579,7 +612,7 @@
                         <p>This flexibility makes the VCC an ideal structure for fund managers who can efficiently manage multiple investment strategies under a single regulatory framework. A key advantage of the VCC in Mauritius is its operational efficiency, as both the VCC and its sub-funds or SPVs can share:</p>
                         <ul>
                             <li>A common board of directors</li>
-                            <li>A licensed fund manager regulated by the Financial Services Commission (FSC)</li>
+                            <li>A licenced fund manager regulated by the Financial Services Commission (FSC)</li>
                             <li>A Collective Investment Scheme (CIS) administrator</li>
                             <li>Other relevant service providers</li>
                         </ul>
@@ -641,12 +674,12 @@
                         <div class="product-badge">Financial Services</div>
                         <h1>Investment Advisors</h1>
                         <p>Thinking about where and how to invest your money wisely?</p>
-                        <p>Whether you are just starting your investment journey or managing a diverse portfolio, sound advice from a licensed expert can make all the difference. Investment Advisors are the ones who provide expert guidance to help you make informed decisions across different types of investments.</p>
-                        <p>In Mauritius, Investment Advisors are regulated under the Financial Services Act and are required to be licensed by the Financial Services Commission (FSC). These advisors offer professional advice to individuals, businesses, and institutions on investments in various asset classes, such as stocks, bonds, mutual funds, and real estate.</p>
+                        <p>Whether you are just starting your investment journey or managing a diverse portfolio, sound advice from a licenced expert can make all the difference. Investment Advisors are the ones who provide expert guidance to help you make informed decisions across different types of investments.</p>
+                        <p>In Mauritius, Investment Advisors are regulated under the Financial Services Act and are required to be licenced by the Financial Services Commission (FSC). These advisors offer professional advice to individuals, businesses, and institutions on investments in various asset classes, such as stocks, bonds, mutual funds, and real estate.</p>
                         <p>Investment advisors in Mauritius can be classified into two categories:</p>
                         <ul>
-                            <li><strong>Restricted Investment Advisors</strong> who have limited licenses, which restrict them to providing advice only on specific asset classes or to certain types of clients, such as institutional investors or high-net-worth individuals (HNWIs). Their activities are subject to tighter regulatory constraints.</li>
-                            <li><strong>Unrestricted Investment Advisors</strong> who have broader licenses that allow them to offer advice on a wide range of investment products without restrictions. They have the ability to serve a wider range of clients, including individuals, corporations, and trusts. They are also subject to regular audits and regulatory oversight by the FSC.</li>
+                            <li><strong>Restricted Investment Advisors</strong> who have limited licences, which restrict them to providing advice only on specific asset classes or to certain types of clients, such as institutional investors or high-net-worth individuals (HNWIs). Their activities are subject to tighter regulatory constraints.</li>
+                            <li><strong>Unrestricted Investment Advisors</strong> who have broader licences that allow them to offer advice on a wide range of investment products without restrictions. They have the ability to serve a wider range of clients, including individuals, corporations, and trusts. They are also subject to regular audits and regulatory oversight by the FSC.</li>
                         </ul>
                         <p>Both categories are expected to meet high standards of professionalism and comply with the laws regarding investor protection, transparency and fiduciary duties.</p>
                     </div>
@@ -656,7 +689,7 @@
                         <div class="product-badge">Financial Services</div>
                         <h1>Investment Dealers</h1>
                         <p>Navigating the world of buying and selling investments requires expertise you can trust. Whether you're an individual investor or a business, having the right partner to execute your transactions smoothly is essential. Investment Dealers are the professionals who make this possible. They facilitate the buying, selling and trading of financial instruments like stocks, bonds, mutual funds, and other securities, playing a key role in keeping markets liquid and efficient.</p>
-                        <p>In Mauritius, Investment Dealers are typically licensed under the Securities Act 2005 and the Financial Services Act, with oversight by the Financial Services Commission (FSC). They can operate in various capacities, namely:</p>
+                        <p>In Mauritius, Investment Dealers are typically licenced under the Securities Act 2005 and the Financial Services Act, with oversight by the Financial Services Commission (FSC). They can operate in various capacities, namely:</p>
                         <ul>
                             <li><strong>Brokerage Firms:</strong> Facilitating transactions between buyers and sellers.</li>
                             <li><strong>Market Makers:</strong> Providing liquidity in the market by offering to buy and sell securities at specified prices.</li>
@@ -717,6 +750,7 @@
                         <h4>About Safyr</h4>
                         <ul>
                             <li><a href="who-we-are.html">About Us</a></li>
+                            <li><a href="our-team.html">Our Team</a></li>
                             <li><a href="why-mauritius.html">Why Mauritius</a></li>
                             <li><a href="insights.html">Insights</a></li>
                             <li><a href="careers.html">Careers</a></li>

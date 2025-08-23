@@ -319,7 +319,7 @@ section::before {
 
 /* Enhanced Hero Section */
 .hero {
-  height: 100vh; /* Full viewport height */
+    height: 80vh; /* Reduced from 100vh to 80vh for better section visibility */
   position: relative;
   background-color: var(--primary-light);
   overflow: hidden;
