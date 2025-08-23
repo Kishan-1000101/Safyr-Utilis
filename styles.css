@@ -116,7 +116,6 @@ section::before {
 
 .header__logo img:hover {
   opacity: 1;
-  transform: scale(1.2);
 }
 
 .header__nav {
@@ -5479,7 +5478,6 @@ button {
 }
 
 .footer-logo img:hover {
-    transform: scale(1.05);
     opacity: 0.9;
 }
 
@@ -5527,14 +5525,28 @@ button {
     font-size: 0.95rem;
     transition: color 0.3s ease;
     cursor: pointer;
-    display: block;
+    display: inline-block;
     padding: 2px 0;
+    position: relative;
+}
+
+.footer-nav-column ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
 .footer-nav-column ul li a:hover {
     color: var(--accent-color);
-    text-decoration: underline;
-    transform: translateX(5px);
+}
+
+.footer-nav-column ul li a:hover::after {
+    width: 100%;
 }
 
 /* Bottom Section */
@@ -5567,12 +5579,26 @@ button {
     cursor: pointer;
     display: inline-block;
     padding: 2px 0;
+    position: relative;
+}
+
+.legal-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
 .legal-links a:hover {
     color: var(--accent-color);
-    text-decoration: underline;
-    transform: translateX(3px);
+}
+
+.legal-links a:hover::after {
+    width: 100%;
 }
 
 .copyright {
