@@ -4718,7 +4718,7 @@ button {
 .cta-text-content {
     position: relative;
     z-index: 2;
-    max-width: 550px;
+    max-width: 800px;
     padding: 50px;
     text-align: left;
 }
@@ -4744,21 +4744,29 @@ button {
 }
 
 .cta-actions .btn--primary {
-    background: linear-gradient(135deg, #f8a01b 0%, #ffc96b 100%);
-    color: white;
-    padding: 18px 35px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
     display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: var(--transition-standard);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-light));
+    color: white;
+    box-shadow: var(--shadow-accent);
 }
 
 .cta-actions .btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(247, 169, 40, 0.4);
 }
 
 /* Responsive Design */
@@ -5110,21 +5118,30 @@ button {
 }
 
 .contact-form .btn {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: var(--transition-standard);
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, var(--accent-color), #fbbf24);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-light));
     color: white;
+    box-shadow: var(--shadow-accent);
     text-align: center;
 }
 
 .contact-form .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(248, 160, 27, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(247, 169, 40, 0.4);
 }
 
 .contact-info {
@@ -5828,22 +5845,29 @@ button {
 }
 
 .insights-preview__cta .btn--primary {
-    background: linear-gradient(135deg, var(--accent-color), #fbbf24);
-    color: white;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 8px 25px rgba(248, 160, 27, 0.3);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: var(--transition-standard);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-light));
+    color: white;
+    box-shadow: var(--shadow-accent);
 }
 
 .insights-preview__cta .btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(248, 160, 27, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(247, 169, 40, 0.4);
 }
 
 /* Responsive Design for Insights Preview */
@@ -6207,41 +6231,50 @@ button {
     margin-top: 30px;
 }
 
+/* Unified CTA Button System */
 .next-btn,
 .prev-btn,
 .submit-btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
     display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 500;
+    transition: var(--transition-standard);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .next-btn,
 .submit-btn {
-    background: var(--accent-color);
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-light));
     color: white;
+    box-shadow: var(--shadow-accent);
 }
 
 .next-btn:hover,
 .submit-btn:hover {
-    background: #fbbf24;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(248, 160, 27, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(247, 169, 40, 0.4);
 }
 
 .prev-btn {
-    background: #e2e8f0;
-    color: #4a5568;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .prev-btn:hover {
-    background: #cbd5e0;
-    transform: translateY(-2px);
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
 }
 
 .checkbox-group {
