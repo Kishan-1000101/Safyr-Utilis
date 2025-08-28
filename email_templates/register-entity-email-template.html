@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Entity Registration Request - Safyr Utilis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #0f294b 0%, #1e3a8a 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #0f294b;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .message-intro {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .section {
+            margin: 25px 0;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .section-header {
+            background-color: #0f294b;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .section-content {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .detail-row {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #0f294b;
+            min-width: 180px;
+            margin-right: 15px;
+        }
+        .detail-value {
+            color: #333;
+            flex: 1;
+        }
+        .enquiry-section {
+            background-color: #ffffff;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .enquiry-label {
+            font-weight: 600;
+            color: #0f294b;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .enquiry-content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #f8a01b;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        .preferences-section {
+            background-color: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .preferences-title {
+            font-weight: 600;
+            color: #2d5a2d;
+            margin-bottom: 15px;
+        }
+        .preference-item {
+            margin-bottom: 8px;
+            color: #2d5a2d;
+        }
+        .footer {
+            background-color: #0f294b;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .footer-content {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .contact-info a {
+            color: #f8a01b;
+            text-decoration: none;
+        }
+        .timestamp {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }
+
+        .action-section {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .action-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .action-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                margin: 0;
+                box-shadow: none;
+            }
+            .header, .content, .footer {
+                padding: 20px;
+            }
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .detail-label {
+                min-width: auto;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Safyr Utilis</div>
+            <div class="tagline">Building Together</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="greeting">
+                New Entity Registration Request
+            </div>
+            
+            <div class="message-intro">
+                You have received a new entity registration request from your website. This is a comprehensive inquiry that requires immediate attention and follow-up.
+            </div>
+            
+            <!-- Personal Information Section -->
+            <div class="section">
+                <div class="section-header">Personal Information</div>
+                <div class="section-content">
+                    <div class="detail-row">
+                        <span class="detail-label">Full Name:</span>
+                        <span class="detail-value">{{from_name}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Email Address:</span>
+                        <span class="detail-value">{{from_email}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Phone Number:</span>
+                        <span class="detail-value">{{phone_number}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Job Title:</span>
+                        <span class="detail-value">{{job_title}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Country of Residence:</span>
+                        <span class="detail-value">{{country}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company Information Section -->
+            <div class="section">
+                <div class="section-header">Company Information</div>
+                <div class="section-content">
+                    <div class="detail-row">
+                        <span class="detail-label">Company Name:</span>
+                        <span class="detail-value">{{company_name}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Industry/Sector:</span>
+                        <span class="detail-value">{{industry}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Service Country:</span>
+                        <span class="detail-value">{{service_country}}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Service of Interest:</span>
+                        <span class="detail-value">{{service}}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enquiry Details -->
+            <div class="enquiry-section">
+                <div class="enquiry-label">Enquiry Details:</div>
+                <div class="enquiry-content">{{enquiry_details}}</div>
+            </div>
+            
+            <!-- Privacy Preferences -->
+            <div class="preferences-section">
+                <div class="preferences-title">Privacy & Communication Preferences:</div>
+                <div class="preference-item">
+                    <strong>Agrees to Communications:</strong> {{communications}}
+                </div>
+                <div class="preference-item">
+                    <strong>Agrees to Marketing:</strong> {{marketing}}
+                </div>
+            </div>
+            
+            <!-- Action Items -->
+            <div class="action-section">
+                <div class="action-title">Action Required:</div>
+                <ul class="action-list">
+                    <li>Review the entity registration request details above</li>
+                    <li>Contact the client within 24 hours to discuss requirements</li>
+                    <li>Prepare a customized proposal based on their needs</li>
+                    <li>Schedule a consultation call to discuss entity structure</li>
+                    <li>Add the contact to your CRM system</li>
+                    <li>Assign to appropriate team member for follow-up</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <strong>Safyr Utilis</strong><br>
+                Your trusted partner in wealth structuring, fund administration, and corporate services.
+            </div>
+            
+            <div class="contact-info">
+                <div>NeXTeracom Tower 1, 7th Floor, Ebene, Mauritius</div>
+                <div>Phone: +230 403 4250 | Email: info@syul.mu</div>
+            </div>
+        </div>
+        
+        <!-- Timestamp -->
+        <div class="timestamp">
+            This email was automatically generated from your entity registration form.
+        </div>
+    </div>
+</body>
+</html>

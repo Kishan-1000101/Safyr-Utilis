@@ -6,6 +6,8 @@
     <title>Contact Us - Safyr Utilis</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -154,12 +156,12 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="company">Company Name</label>
                             <input type="text" id="company" name="company">
-                        </div>
+                        </div> -->
                         
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="service">Service of Interest *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
@@ -169,7 +171,7 @@
                                 <option value="tax-accounting">Tax & Accounting Services</option>
                                 <option value="general-inquiry">General Inquiry</option>
                             </select>
-                        </div>
+                        </div> -->
                         
                         <div class="form-group">
                             <label for="message">Message *</label>
@@ -223,7 +225,7 @@
                             </div>
                         </div>
                         
-                        <div class="contact-method">
+                        <!-- <div class="contact-method">
                             <div class="contact-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
@@ -231,7 +233,7 @@
                                 <h4>Business Hours</h4>
                                 <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div class="social-links">
@@ -423,5 +425,147 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- EmailJS Configuration and Form Handling -->
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("mCkS8s5FHQ97GahLZ");
+        })();
+        
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Get form data
+                    const formData = {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        message: document.getElementById('message').value,
+                        privacy: document.getElementById('privacy').checked
+                    };
+                    
+                    // Send email using EmailJS
+                    emailjs.send('service_yl4d0uu', 'template_iklhelt', {
+                        from_name: formData.firstName + ' ' + formData.lastName,
+                        from_email: formData.email,
+                        phone_number: formData.phone,
+                        message: formData.message,
+                        to_name: 'Safyr Utilis Team'
+                    })
+                    .then(function(response) {
+                        // Success
+                        showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+                        contactForm.reset();
+                    })
+                    .catch(function(error) {
+                        // Error
+                        showNotification('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+                        console.error('EmailJS Error:', error);
+                    })
+                    .finally(function() {
+                        // Reset button
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+        
+        // Notification function
+        function showNotification(message, type) {
+            // Remove existing notifications
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification--${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span>${message}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 1000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .notification-close {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                margin-left: auto;
+                padding: 0;
+                font-size: 14px;
+            }
+            
+            .notification-close:hover {
+                opacity: 0.8;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

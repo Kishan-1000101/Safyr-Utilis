@@ -6,6 +6,8 @@
     <title>Register Your Entity - Safyr Utilis</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
       body { margin: 0; background:#0f294b; }
     </style>
@@ -111,7 +113,19 @@
                                     <option value="United States">United States</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="service">Service of Interest *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="wealth-structuring">Wealth Structuring</option>
+                                    <option value="fund-administration">Fund Administration</option>
+                                    <option value="corporate-services">Corporate Secretarial Services</option>
+                                    <option value="tax-accounting">Tax & Accounting Services</option>
+                                    <option value="general-inquiry">General Inquiry</option>
+                                </select>
+                            </div>
                         </div>
+
                         <div class="form-group">
                             <label for="enquiryDetails">Please provide further details in relation to your enquiry...*</label>
                             <textarea id="enquiryDetails" name="enquiryDetails" rows="4" required></textarea>
@@ -166,7 +180,12 @@
     </section>
 
     <script>
-    // Minimal inline script for multi-step form
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("mCkS8s5FHQ97GahLZ");
+    })();
+
+    // Multi-step form functionality
     let currentStep = 1;
     const totalSteps = 3;
 
@@ -198,32 +217,198 @@
         }
     }
 
+    // Collect all form data from all steps
+    function collectFormData() {
+        const formData = {};
+        
+        // Step 1: Personal Information
+        formData.firstName = document.getElementById('firstName').value;
+        formData.lastName = document.getElementById('lastName').value;
+        formData.email = document.getElementById('email').value;
+        formData.phone = document.getElementById('phone').value;
+        formData.jobTitle = document.getElementById('jobTitle').value;
+        formData.country = document.getElementById('country').value;
+        
+        // Step 2: Company Information
+        formData.companyName = document.getElementById('companyName').value;
+        formData.industry = document.getElementById('industry').value;
+        formData.serviceCountry = document.getElementById('serviceCountry').value;
+        formData.service = document.getElementById('service').value;
+        formData.enquiryDetails = document.getElementById('enquiryDetails').value;
+        
+        // Step 3: Privacy Preferences
+        formData.communications = document.getElementById('communications').checked ? 'Yes' : 'No';
+        formData.marketing = document.getElementById('marketing').checked ? 'Yes' : 'No';
+        
+        return formData;
+    }
+
+    // Reset all forms
+    function resetForms() {
+        document.querySelectorAll('.hawksford-form input, .hawksford-form select, .hawksford-form textarea').forEach(field => {
+            if (field.type === 'checkbox') {
+                field.checked = false;
+            } else {
+                field.value = '';
+            }
+        });
+        
+        // Reset to first step
+        currentStep = 1;
+        document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+        document.getElementById('step1').classList.add('active');
+        updateProgressBar();
+    }
+
+    // Show notification
+    function showNotification(message, type) {
+        // Remove existing notifications
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification--${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            max-width: 400px;
+            animation: slideIn 0.3s ease;
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-        const forms = document.querySelectorAll('.hawksford-form');
-        forms.forEach(form => {
-            form.addEventListener('submit', function(e) {
+        // Handle form submission
+        const submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                const formData = new FormData();
-                for (let i = 1; i <= totalSteps; i++) {
-                    const stepForm = document.querySelector(`#step${i} .hawksford-form`);
-                    if (stepForm) {
-                        const stepData = new FormData(stepForm);
-                        for (let [key, value] of stepData.entries()) {
-                            formData.append(key, value);
-                        }
+                
+                // Validate all required fields
+                const requiredFields = document.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (field.type === 'checkbox') {
+                        if (!field.checked) isValid = false;
+                    } else {
+                        if (!field.value.trim()) isValid = false;
                     }
+                });
+                
+                if (!isValid) {
+                    showNotification('Please fill in all required fields before submitting.', 'error');
+                    return;
                 }
-                alert('Thank you for your enquiry! We will get back to you within 24 hours.');
-                currentStep = 1;
-                document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
-                document.getElementById('step1').classList.add('active');
-                updateProgressBar();
-                document.querySelectorAll('.hawksford-form input, .hawksford-form select, .hawksford-form textarea').forEach(field => {
-                    if (field.type === 'checkbox') field.checked = false; else field.value = '';
+                
+                // Show loading state
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Collect form data
+                const formData = collectFormData();
+                
+                // Send email using EmailJS
+                emailjs.send('service_yl4d0uu', 'template_ckvnclb', {
+                    from_name: formData.firstName + ' ' + formData.lastName,
+                    from_email: formData.email,
+                    phone_number: formData.phone,
+                    job_title: formData.jobTitle,
+                    country: formData.country,
+                    company_name: formData.companyName,
+                    industry: formData.industry,
+                    service_country: formData.serviceCountry,
+                    service: formData.service,
+                    enquiry_details: formData.enquiryDetails,
+                    communications: formData.communications,
+                    marketing: formData.marketing,
+                    to_name: 'Safyr Utilis Team'
+                })
+                .then(function(response) {
+                    // Success
+                    showNotification('Thank you for your enquiry! We will get back to you within 24 hours.', 'success');
+                    resetForms();
+                })
+                .catch(function(error) {
+                    // Error
+                    showNotification('Sorry, there was an error sending your enquiry. Please try again or contact us directly.', 'error');
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
                 });
             });
-        });
+        }
     });
+
+    // Add CSS animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            padding: 0;
+            font-size: 14px;
+        }
+        
+        .notification-close:hover {
+            opacity: 0.8;
+        }
+    `;
+    document.head.appendChild(style);
     </script>
 </body>
 </html>

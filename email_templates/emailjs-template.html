@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Form Submission - Safyr Utilis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #0f294b 0%, #1e3a8a 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #0f294b;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .message-intro {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .contact-details {
+            background-color: #f8f9fa;
+            border-left: 4px solid #f8a01b;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .detail-row {
+            margin-bottom: 15px;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #0f294b;
+            display: inline-block;
+            width: 120px;
+        }
+        .detail-value {
+            color: #333;
+        }
+        .message-section {
+            background-color: #ffffff;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .message-label {
+            font-weight: 600;
+            color: #0f294b;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .message-content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #f8a01b;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        .footer {
+            background-color: #0f294b;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .footer-content {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .contact-info a {
+            color: #f8a01b;
+            text-decoration: none;
+        }
+        .timestamp {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }
+        .action-section {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .action-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .action-list {
+            margin: 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Safyr Utilis</div>
+            <div class="tagline">Building Together</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="greeting">New Contact Form Submission</div>
+            
+            <div class="message-intro">
+                You have received a new inquiry from your website contact form. Please review the details below and respond accordingly.
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <div class="detail-row">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">{{from_name}}</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">{{from_email}}</span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="detail-label">Phone:</span>
+                    <span class="detail-value">{{phone_number}}</span>
+                </div>
+            </div>
+            
+            <!-- Message -->
+            <div class="message-section">
+                <div class="message-label">Message:</div>
+                <div class="message-content">{{message}}</div>
+            </div>
+            
+            <!-- Action Items -->
+            <div class="action-section">
+                <div class="action-title">Action Required:</div>
+                <ul class="action-list">
+                    <li>Review the inquiry details above</li>
+                    <li>Respond to the client within 24 hours</li>
+                    <li>Add the contact to your CRM if applicable</li>
+                    <li>Follow up with relevant team members if needed</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <strong>Safyr Utilis</strong><br>
+                Your trusted partner in wealth structuring, fund administration, and corporate services.
+            </div>
+            
+            <div class="contact-info">
+                <div>NeXTeracom Tower 1, 7th Floor, Ebene, Mauritius</div>
+                <div>Phone: +230 403 4250 | Email: info@syul.mu</div>
+            </div>
+        </div>
+        
+        <!-- Timestamp -->
+        <div class="timestamp">
+            This email was automatically generated from your website contact form.
+        </div>
+    </div>
+</body>
+</html>
